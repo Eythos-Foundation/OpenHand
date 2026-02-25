@@ -387,7 +387,7 @@ describe("handleLineWebhookEvents", () => {
       deliveryContext: { isRedelivery: true },
     } as MessageEvent;
 
-    const context = {
+    const context: Parameters<typeof handleLineWebhookEvents>[1] = {
       cfg: { channels: { line: { groupPolicy: "open" } } },
       account: {
         accountId: "default",
