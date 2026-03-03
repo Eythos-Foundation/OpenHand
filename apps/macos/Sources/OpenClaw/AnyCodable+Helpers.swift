@@ -1,9 +1,9 @@
 import Foundation
-import OpenClawKit
+import OpenHandKit
 
-// Prefer the OpenClawKit wrapper to keep gateway request payloads consistent.
-typealias AnyCodable = OpenClawKit.AnyCodable
-typealias InstanceIdentity = OpenClawKit.InstanceIdentity
+// Prefer the OpenHandKit wrapper to keep gateway request payloads consistent.
+typealias AnyCodable = OpenHandKit.AnyCodable
+typealias InstanceIdentity = OpenHandKit.InstanceIdentity
 
 extension AnyCodable {
     var stringValue: String? {

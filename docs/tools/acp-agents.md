@@ -10,9 +10,9 @@ title: "ACP Agents"
 
 # ACP agents
 
-[Agent Client Protocol (ACP)](https://agentclientprotocol.com/) sessions let OpenClaw run external coding harnesses (for example Pi, Claude Code, Codex, OpenCode, and Gemini CLI) through an ACP backend plugin.
+[Agent Client Protocol (ACP)](https://agentclientprotocol.com/) sessions let OpenHand run external coding harnesses (for example Pi, Claude Code, Codex, OpenCode, and Gemini CLI) through an ACP backend plugin.
 
-If you ask OpenClaw in plain language to "run this in Codex" or "start Claude Code in a thread", OpenClaw should route that request to the ACP runtime (not the native sub-agent runtime).
+If you ask OpenHand in plain language to "run this in Codex" or "start Claude Code in a thread", OpenHand should route that request to the ACP runtime (not the native sub-agent runtime).
 
 ## Fast operator flow
 
@@ -41,7 +41,7 @@ Examples of natural requests:
 - "Run this as a one-shot Claude Code ACP session and summarize the result."
 - "Use Gemini CLI for this task in a thread, then keep follow-ups in that same thread."
 
-What OpenClaw should do:
+What OpenHand should do:
 
 1. Pick `runtime: "acp"`.
 2. Resolve the requested harness target (`agentId`, for example `codex`).
@@ -50,11 +50,11 @@ What OpenClaw should do:
 
 ## ACP versus sub-agents
 
-Use ACP when you want an external harness runtime. Use sub-agents when you want OpenClaw-native delegated runs.
+Use ACP when you want an external harness runtime. Use sub-agents when you want OpenHand-native delegated runs.
 
 | Area          | ACP session                           | Sub-agent run                      |
 | ------------- | ------------------------------------- | ---------------------------------- |
-| Runtime       | ACP backend plugin (for example acpx) | OpenClaw native sub-agent runtime  |
+| Runtime       | ACP backend plugin (for example acpx) | OpenHand native sub-agent runtime  |
 | Session key   | `agent:<agentId>:acp:<uuid>`          | `agent:<agentId>:subagent:<uuid>`  |
 | Main commands | `/acp ...`                            | `/subagents ...`                   |
 | Spawn tool    | `sessions_spawn` with `runtime:"acp"` | `sessions_spawn` (default runtime) |
@@ -65,12 +65,12 @@ See also [Sub-agents](/tools/subagents).
 
 When thread bindings are enabled for a channel adapter, ACP sessions can be bound to threads:
 
-- OpenClaw binds a thread to a target ACP session.
+- OpenHand binds a thread to a target ACP session.
 - Follow-up messages in that thread route to the bound ACP session.
 - ACP output is delivered back to the same thread.
 - Unfocus/close/archive/idle-timeout or max-age expiry removes the binding.
 
-Thread binding support is adapter-specific. If the active channel adapter does not support thread bindings, OpenClaw returns a clear unsupported/unavailable message.
+Thread binding support is adapter-specific. If the active channel adapter does not support thread bindings, OpenHand returns a clear unsupported/unavailable message.
 
 Required feature flags for thread-bound ACP:
 
@@ -104,7 +104,7 @@ Use `runtime: "acp"` to start an ACP session from an agent turn or tool call.
 Notes:
 
 - `runtime` defaults to `subagent`, so set `runtime: "acp"` explicitly for ACP sessions.
-- If `agentId` is omitted, OpenClaw uses `acp.defaultAgent` when configured.
+- If `agentId` is omitted, OpenHand uses `acp.defaultAgent` when configured.
 - `mode: "session"` requires `thread: true` to keep a persistent bound conversation.
 
 Interface details:
@@ -115,14 +115,14 @@ Interface details:
 - `thread` (optional, default `false`): request thread binding flow where supported.
 - `mode` (optional): `run` (one-shot) or `session` (persistent).
   - default is `run`
-  - if `thread: true` and mode omitted, OpenClaw may default to persistent behavior per runtime path
+  - if `thread: true` and mode omitted, OpenHand may default to persistent behavior per runtime path
   - `mode: "session"` requires `thread: true`
 - `cwd` (optional): requested runtime working directory (validated by backend/runtime policy).
 - `label` (optional): operator-facing label used in session/banner text.
 
 ## Sandbox compatibility
 
-ACP sessions currently run on the host runtime, not inside the OpenClaw sandbox.
+ACP sessions currently run on the host runtime, not inside the OpenHand sandbox.
 
 Current limitations:
 
@@ -165,7 +165,7 @@ Resolution order:
 2. Current thread binding (if this conversation/thread is bound to an ACP session)
 3. Current requester session fallback
 
-If no target resolves, OpenClaw returns a clear error (`Unable to resolve session target: ...`).
+If no target resolves, OpenHand returns a clear error (`Unable to resolve session target: ...`).
 
 ## Spawn thread modes
 
@@ -204,7 +204,7 @@ Available command family:
 
 `/acp status` shows the effective runtime options and, when available, both runtime-level and backend-level session identifiers.
 
-Some controls depend on backend capabilities. If a backend does not support a control, OpenClaw returns a clear unsupported-control error.
+Some controls depend on backend capabilities. If a backend does not support a control, OpenHand returns a clear unsupported-control error.
 
 ## ACP command cookbook
 
@@ -251,9 +251,9 @@ Current acpx built-in harness aliases:
 - `gemini`
 - `kimi`
 
-When OpenClaw uses the acpx backend, prefer these values for `agentId` unless your acpx config defines custom agent aliases.
+When OpenHand uses the acpx backend, prefer these values for `agentId` unless your acpx config defines custom agent aliases.
 
-Direct acpx CLI usage can also target arbitrary adapters via `--agent <command>`, but that raw escape hatch is an acpx CLI feature (not the normal OpenClaw `agentId` path).
+Direct acpx CLI usage can also target arbitrary adapters via `--agent <command>`, but that raw escape hatch is an acpx CLI feature (not the normal OpenHand `agentId` path).
 
 ## Required config
 
@@ -313,14 +313,14 @@ See [Configuration Reference](/gateway/configuration-reference).
 Install and enable plugin:
 
 ```bash
-openclaw plugins install acpx
-openclaw config set plugins.entries.acpx.enabled true
+openhand plugins install acpx
+openhand config set plugins.entries.acpx.enabled true
 ```
 
 Local workspace install during development:
 
 ```bash
-openclaw plugins install ./extensions/acpx
+openhand plugins install ./extensions/acpx
 ```
 
 Then verify backend health:
@@ -331,7 +331,7 @@ Then verify backend health:
 
 ### acpx command and version configuration
 
-By default, the acpx plugin (published as `@openclaw/acpx`) uses the plugin-local pinned binary:
+By default, the acpx plugin (published as `@openhand/acpx`) uses the plugin-local pinned binary:
 
 1. Command defaults to `extensions/acpx/node_modules/.bin/acpx`.
 2. Expected version defaults to the extension pin.
@@ -361,10 +361,10 @@ You can override command/version in plugin config:
 Notes:
 
 - `command` accepts an absolute path, relative path, or command name (`acpx`).
-- Relative paths resolve from OpenClaw workspace directory.
+- Relative paths resolve from OpenHand workspace directory.
 - `expectedVersion: "any"` disables strict version matching.
 - When `command` points to a custom binary/path, plugin-local auto-install is disabled.
-- OpenClaw startup remains non-blocking while the backend health check runs.
+- OpenHand startup remains non-blocking while the backend health check runs.
 
 See [Plugins](/tools/plugin).
 
@@ -396,13 +396,13 @@ Controls what happens when a permission prompt would be shown but no interactive
 Set via plugin config:
 
 ```bash
-openclaw config set plugins.entries.acpx.config.permissionMode approve-all
-openclaw config set plugins.entries.acpx.config.nonInteractivePermissions fail
+openhand config set plugins.entries.acpx.config.permissionMode approve-all
+openhand config set plugins.entries.acpx.config.nonInteractivePermissions fail
 ```
 
 Restart the gateway after changing these values.
 
-> **Important:** OpenClaw currently defaults to `permissionMode=approve-reads` and `nonInteractivePermissions=fail`. In non-interactive ACP sessions, any write or exec that triggers a permission prompt can fail with `AcpRuntimeError: Permission prompt unavailable in non-interactive mode`.
+> **Important:** OpenHand currently defaults to `permissionMode=approve-reads` and `nonInteractivePermissions=fail`. In non-interactive ACP sessions, any write or exec that triggers a permission prompt can fail with `AcpRuntimeError: Permission prompt unavailable in non-interactive mode`.
 >
 > If you need to restrict permissions, set `nonInteractivePermissions` to `deny` so sessions degrade gracefully instead of crashing.
 

@@ -1,5 +1,5 @@
-import type { OpenClawConfig } from "openclaw/plugin-sdk";
-import { DEFAULT_ACCOUNT_ID } from "openclaw/plugin-sdk/account-id";
+import type { OpenHandConfig } from "openhand/plugin-sdk";
+import { DEFAULT_ACCOUNT_ID } from "openhand/plugin-sdk/account-id";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import {
   getZcaUserInfo,
@@ -19,8 +19,8 @@ vi.mock("./zalo-js.js", () => ({
 const mockCheckAuthenticated = vi.mocked(checkZaloAuthenticated);
 const mockGetUserInfo = vi.mocked(getZaloUserInfo);
 
-function asConfig(value: unknown): OpenClawConfig {
-  return value as OpenClawConfig;
+function asConfig(value: unknown): OpenHandConfig {
+  return value as OpenHandConfig;
 }
 
 describe("zalouser account resolution", () => {

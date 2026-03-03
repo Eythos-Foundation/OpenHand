@@ -1,6 +1,6 @@
-# @openclaw/voice-call
+# @openhand/voice-call
 
-Official Voice Call plugin for **OpenClaw**.
+Official Voice Call plugin for **OpenHand**.
 
 Providers:
 
@@ -9,15 +9,15 @@ Providers:
 - **Plivo** (Voice API + XML transfer + GetInput speech)
 - **Mock** (dev/no network)
 
-Docs: `https://docs.openclaw.ai/plugins/voice-call`
-Plugin system: `https://docs.openclaw.ai/plugin`
+Docs: `https://docs.openhand.ai/plugins/voice-call`
+Plugin system: `https://docs.openhand.ai/plugin`
 
 ## Install (local dev)
 
-### Option A: install via OpenClaw (recommended)
+### Option A: install via OpenHand (recommended)
 
 ```bash
-openclaw plugins install @openclaw/voice-call
+openhand plugins install @openhand/voice-call
 ```
 
 Restart the Gateway afterwards.
@@ -25,9 +25,9 @@ Restart the Gateway afterwards.
 ### Option B: copy into your global extensions folder (dev)
 
 ```bash
-mkdir -p ~/.openclaw/extensions
-cp -R extensions/voice-call ~/.openclaw/extensions/voice-call
-cd ~/.openclaw/extensions/voice-call && pnpm install
+mkdir -p ~/.openhand/extensions
+cp -R extensions/voice-call ~/.openhand/extensions/voice-call
+cd ~/.openhand/extensions/voice-call && pnpm install
 ```
 
 ## Config
@@ -143,13 +143,13 @@ Notes:
 ## CLI
 
 ```bash
-openclaw voicecall call --to "+15555550123" --message "Hello from OpenClaw"
-openclaw voicecall continue --call-id <id> --message "Any questions?"
-openclaw voicecall speak --call-id <id> --message "One moment"
-openclaw voicecall end --call-id <id>
-openclaw voicecall status --call-id <id>
-openclaw voicecall tail
-openclaw voicecall expose --mode funnel
+openhand voicecall call --to "+15555550123" --message "Hello from OpenHand"
+openhand voicecall continue --call-id <id> --message "Any questions?"
+openhand voicecall speak --call-id <id> --message "One moment"
+openhand voicecall end --call-id <id>
+openhand voicecall status --call-id <id>
+openhand voicecall tail
+openhand voicecall expose --mode funnel
 ```
 
 ## Tool

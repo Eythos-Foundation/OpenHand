@@ -1,5 +1,5 @@
 import Foundation
-import OpenClawKit
+import OpenHandKit
 
 enum GatewayRemoteConfig {
     static func resolveTransport(root: [String: Any]) -> AppState.RemoteTransport {

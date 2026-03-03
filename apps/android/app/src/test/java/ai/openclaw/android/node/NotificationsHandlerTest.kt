@@ -1,7 +1,7 @@
-package ai.openclaw.android.node
+package ai.openhand.android.node
 
 import android.content.Context
-import ai.openclaw.android.gateway.GatewaySession
+import ai.openhand.android.gateway.GatewaySession
 import kotlinx.coroutines.test.runTest
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonObject

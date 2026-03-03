@@ -1,7 +1,7 @@
-import OpenClawDiscovery
+import OpenHandDiscovery
 import SwiftUI
 import Testing
-@testable import OpenClaw
+@testable import OpenHand
 
 @Suite(.serialized)
 @MainActor

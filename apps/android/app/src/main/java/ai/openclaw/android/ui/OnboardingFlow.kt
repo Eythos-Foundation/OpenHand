@@ -1,4 +1,4 @@
-package ai.openclaw.android.ui
+package ai.openhand.android.ui
 
 import android.Manifest
 import android.content.Context
@@ -84,10 +84,10 @@ import androidx.core.net.toUri
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleEventObserver
 import androidx.lifecycle.compose.LocalLifecycleOwner
-import ai.openclaw.android.LocationMode
-import ai.openclaw.android.MainViewModel
-import ai.openclaw.android.R
-import ai.openclaw.android.node.DeviceNotificationListenerService
+import ai.openhand.android.LocationMode
+import ai.openhand.android.MainViewModel
+import ai.openhand.android.R
+import ai.openhand.android.node.DeviceNotificationListenerService
 import com.journeyapps.barcodescanner.ScanContract
 import com.journeyapps.barcodescanner.ScanOptions
 
@@ -543,7 +543,7 @@ fun OnboardingFlow(viewModel: MainViewModel, modifier: Modifier = Modifier) {
             color = onboardingAccent,
           )
           Text(
-            "OpenClaw\nMobile Setup",
+            "OpenHand\nMobile Setup",
             style = onboardingDisplayStyle.copy(lineHeight = 38.sp),
             color = onboardingText,
           )
@@ -573,7 +573,7 @@ fun OnboardingFlow(viewModel: MainViewModel, modifier: Modifier = Modifier) {
                 qrScanLauncher.launch(
                   ScanOptions().apply {
                     setDesiredBarcodeFormats(ScanOptions.QR_CODE)
-                    setPrompt("Scan OpenClaw onboarding QR")
+                    setPrompt("Scan OpenHand onboarding QR")
                     setBeepEnabled(false)
                     setOrientationLocked(false)
                   },
@@ -987,7 +987,7 @@ private fun GatewayStep(
   StepShell(title = "Gateway Connection") {
     GuideBlock(title = "Scan onboarding QR") {
       Text("Run these on the gateway host:", style = onboardingCalloutStyle, color = onboardingTextSecondary)
-      CommandBlock("openclaw qr")
+      CommandBlock("openhand qr")
       Text("Then scan with this device.", style = onboardingCalloutStyle, color = onboardingTextSecondary)
     }
     Button(
@@ -1035,8 +1035,8 @@ private fun GatewayStep(
       Column(verticalArrangement = Arrangement.spacedBy(12.dp)) {
         GuideBlock(title = "Manual setup commands") {
           Text("Run these on the gateway host:", style = onboardingCalloutStyle, color = onboardingTextSecondary)
-          CommandBlock("openclaw qr --setup-code-only")
-          CommandBlock("openclaw qr --json")
+          CommandBlock("openhand qr --setup-code-only")
+          CommandBlock("openhand qr --json")
           Text(
             "`--json` prints `setupCode` and `gatewayUrl`.",
             style = onboardingCalloutStyle,
@@ -1055,7 +1055,7 @@ private fun GatewayStep(
           OutlinedTextField(
             value = setupCode,
             onValueChange = onSetupCodeChange,
-            placeholder = { Text("Paste code from `openclaw qr --setup-code-only`", color = onboardingTextTertiary, style = onboardingBodyStyle) },
+            placeholder = { Text("Paste code from `openhand qr --setup-code-only`", color = onboardingTextTertiary, style = onboardingBodyStyle) },
             modifier = Modifier.fillMaxWidth(),
             minLines = 3,
             maxLines = 5,
@@ -1564,8 +1564,8 @@ private fun FinalStep(
       } else {
         GuideBlock(title = "Pairing Required") {
           Text("Run these on the gateway host:", style = onboardingCalloutStyle, color = onboardingTextSecondary)
-          CommandBlock("openclaw devices list")
-          CommandBlock("openclaw devices approve <requestId>")
+          CommandBlock("openhand devices list")
+          CommandBlock("openhand devices approve <requestId>")
           Text("Then tap Connect again.", style = onboardingCalloutStyle, color = onboardingTextSecondary)
         }
       }

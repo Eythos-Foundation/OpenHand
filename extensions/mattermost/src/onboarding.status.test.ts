@@ -1,4 +1,4 @@
-import type { OpenClawConfig } from "openclaw/plugin-sdk";
+import type { OpenHandConfig } from "openhand/plugin-sdk";
 import { describe, expect, it } from "vitest";
 import { mattermostOnboardingAdapter } from "./onboarding.js";
 
@@ -16,7 +16,7 @@ describe("mattermost onboarding status", () => {
             },
           },
         },
-      } as OpenClawConfig,
+      } as OpenHandConfig,
       accountOverrides: {},
     });
 

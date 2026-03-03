@@ -1,4 +1,4 @@
-package ai.openclaw.android.gateway
+package ai.openhand.android.gateway
 
 data class ParsedInvokeError(
   val code: String,

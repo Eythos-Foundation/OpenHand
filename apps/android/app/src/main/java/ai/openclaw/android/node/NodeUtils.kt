@@ -1,6 +1,6 @@
-package ai.openclaw.android.node
+package ai.openhand.android.node
 
-import ai.openclaw.android.gateway.parseInvokeErrorFromThrowable
+import ai.openhand.android.gateway.parseInvokeErrorFromThrowable
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonElement
 import kotlinx.serialization.json.JsonNull

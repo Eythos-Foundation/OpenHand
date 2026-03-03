@@ -1,4 +1,4 @@
-import OpenClawKit
+import OpenHandKit
 
 enum GatewayPushSubscription {
     @MainActor

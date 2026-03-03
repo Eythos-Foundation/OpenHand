@@ -1,8 +1,8 @@
 import Foundation
-import OpenClawDiscovery
+import OpenHandDiscovery
 import SwiftUI
 import Testing
-@testable import OpenClaw
+@testable import OpenHand
 
 @Suite(.serialized)
 @MainActor
@@ -29,11 +29,11 @@ struct OnboardingViewSmokeTests {
 
     @Test func selectRemoteGatewayClearsStaleSshTargetWhenEndpointUnresolved() async {
         let override = FileManager().temporaryDirectory
-            .appendingPathComponent("openclaw-config-\(UUID().uuidString)")
-            .appendingPathComponent("openclaw.json")
+            .appendingPathComponent("openhand-config-\(UUID().uuidString)")
+            .appendingPathComponent("openhand.json")
             .path
 
-        await TestIsolation.withEnvValues(["OPENCLAW_CONFIG_PATH": override]) {
+        await TestIsolation.withEnvValues(["OPENHAND_CONFIG_PATH": override]) {
             let state = AppState(preview: true)
             state.remoteTransport = .ssh
             state.remoteTarget = "user@old-host:2222"
@@ -49,7 +49,7 @@ struct OnboardingViewSmokeTests {
                 tailnetDns: "txt-host.ts.net",
                 sshPort: 22,
                 gatewayPort: 18789,
-                cliPath: "/tmp/openclaw",
+                cliPath: "/tmp/openhand",
                 stableID: UUID().uuidString,
                 debugID: UUID().uuidString,
                 isLocal: false)

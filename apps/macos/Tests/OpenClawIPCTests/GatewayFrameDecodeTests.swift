@@ -1,5 +1,5 @@
 import Foundation
-import OpenClawProtocol
+import OpenHandProtocol
 import Testing
 
 @Suite struct GatewayFrameDecodeTests {

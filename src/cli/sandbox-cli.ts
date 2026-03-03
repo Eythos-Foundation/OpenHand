@@ -14,30 +14,30 @@ type CommandOptions = Record<string, unknown>;
 
 const SANDBOX_EXAMPLES = {
   main: [
-    ["openclaw sandbox list", "List all sandbox containers."],
-    ["openclaw sandbox list --browser", "List only browser containers."],
-    ["openclaw sandbox recreate --all", "Recreate all containers."],
-    ["openclaw sandbox recreate --session main", "Recreate a specific session."],
-    ["openclaw sandbox recreate --agent mybot", "Recreate agent containers."],
-    ["openclaw sandbox explain", "Explain effective sandbox config."],
+    ["openhand sandbox list", "List all sandbox containers."],
+    ["openhand sandbox list --browser", "List only browser containers."],
+    ["openhand sandbox recreate --all", "Recreate all containers."],
+    ["openhand sandbox recreate --session main", "Recreate a specific session."],
+    ["openhand sandbox recreate --agent mybot", "Recreate agent containers."],
+    ["openhand sandbox explain", "Explain effective sandbox config."],
   ],
   list: [
-    ["openclaw sandbox list", "List all sandbox containers."],
-    ["openclaw sandbox list --browser", "List only browser containers."],
-    ["openclaw sandbox list --json", "JSON output."],
+    ["openhand sandbox list", "List all sandbox containers."],
+    ["openhand sandbox list --browser", "List only browser containers."],
+    ["openhand sandbox list --json", "JSON output."],
   ],
   recreate: [
-    ["openclaw sandbox recreate --all", "Recreate all containers."],
-    ["openclaw sandbox recreate --session main", "Recreate a specific session."],
-    ["openclaw sandbox recreate --agent mybot", "Recreate a specific agent (includes sub-agents)."],
-    ["openclaw sandbox recreate --browser --all", "Recreate only browser containers."],
-    ["openclaw sandbox recreate --all --force", "Skip confirmation."],
+    ["openhand sandbox recreate --all", "Recreate all containers."],
+    ["openhand sandbox recreate --session main", "Recreate a specific session."],
+    ["openhand sandbox recreate --agent mybot", "Recreate a specific agent (includes sub-agents)."],
+    ["openhand sandbox recreate --browser --all", "Recreate only browser containers."],
+    ["openhand sandbox recreate --all --force", "Skip confirmation."],
   ],
   explain: [
-    ["openclaw sandbox explain", "Show effective sandbox config."],
-    ["openclaw sandbox explain --session agent:main:main", "Explain a specific session."],
-    ["openclaw sandbox explain --agent work", "Explain an agent sandbox."],
-    ["openclaw sandbox explain --json", "JSON output."],
+    ["openhand sandbox explain", "Show effective sandbox config."],
+    ["openhand sandbox explain --session agent:main:main", "Explain a specific session."],
+    ["openhand sandbox explain --agent work", "Explain an agent sandbox."],
+    ["openhand sandbox explain --json", "JSON output."],
   ],
 } as const;
 
@@ -67,7 +67,7 @@ export function registerSandboxCli(program: Command) {
     .addHelpText(
       "after",
       () =>
-        `\n${theme.muted("Docs:")} ${formatDocsLink("/cli/sandbox", "docs.openclaw.ai/cli/sandbox")}\n`,
+        `\n${theme.muted("Docs:")} ${formatDocsLink("/cli/sandbox", "docs.openhand.ai/cli/sandbox")}\n`,
     )
     .action(() => {
       sandbox.help({ error: true });

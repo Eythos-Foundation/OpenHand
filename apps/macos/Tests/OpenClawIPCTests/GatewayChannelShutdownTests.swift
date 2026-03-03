@@ -1,7 +1,7 @@
 import Foundation
-import OpenClawKit
+import OpenHandKit
 import Testing
-@testable import OpenClaw
+@testable import OpenHand
 
 @Suite struct GatewayChannelShutdownTests {
     @Test func shutdownPreventsReconnectLoopFromReceiveFailure() async throws {

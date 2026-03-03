@@ -1,4 +1,4 @@
-package ai.openclaw.android.gateway
+package ai.openhand.android.gateway
 
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse

@@ -1,4 +1,4 @@
-package ai.openclaw.android.ui.chat
+package ai.openhand.android.ui.chat
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.horizontalScroll
@@ -46,17 +46,17 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import ai.openclaw.android.ui.mobileAccent
-import ai.openclaw.android.ui.mobileAccentSoft
-import ai.openclaw.android.ui.mobileBorder
-import ai.openclaw.android.ui.mobileBorderStrong
-import ai.openclaw.android.ui.mobileCallout
-import ai.openclaw.android.ui.mobileCaption1
-import ai.openclaw.android.ui.mobileHeadline
-import ai.openclaw.android.ui.mobileSurface
-import ai.openclaw.android.ui.mobileText
-import ai.openclaw.android.ui.mobileTextSecondary
-import ai.openclaw.android.ui.mobileTextTertiary
+import ai.openhand.android.ui.mobileAccent
+import ai.openhand.android.ui.mobileAccentSoft
+import ai.openhand.android.ui.mobileBorder
+import ai.openhand.android.ui.mobileBorderStrong
+import ai.openhand.android.ui.mobileCallout
+import ai.openhand.android.ui.mobileCaption1
+import ai.openhand.android.ui.mobileHeadline
+import ai.openhand.android.ui.mobileSurface
+import ai.openhand.android.ui.mobileText
+import ai.openhand.android.ui.mobileTextSecondary
+import ai.openhand.android.ui.mobileTextTertiary
 
 @Composable
 fun ChatComposer(
@@ -148,7 +148,7 @@ fun ChatComposer(
       Text(
         text = "Gateway is offline. Connect first in the Connect tab.",
         style = mobileCallout,
-        color = ai.openclaw.android.ui.mobileWarning,
+        color = ai.openhand.android.ui.mobileWarning,
       )
     }
 
@@ -346,7 +346,7 @@ private fun chatTextFieldColors() =
 @Composable
 private fun mobileBodyStyle() =
   MaterialTheme.typography.bodyMedium.copy(
-    fontFamily = ai.openclaw.android.ui.mobileFontFamily,
+    fontFamily = ai.openhand.android.ui.mobileFontFamily,
     fontWeight = FontWeight.Medium,
     fontSize = 15.sp,
     lineHeight = 22.sp,

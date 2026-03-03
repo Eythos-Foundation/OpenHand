@@ -1,6 +1,6 @@
-package ai.openclaw.android.gateway
+package ai.openhand.android.gateway
 
-import ai.openclaw.android.SecurePrefs
+import ai.openhand.android.SecurePrefs
 
 interface DeviceAuthTokenStore {
   fun loadToken(deviceId: String, role: String): String?

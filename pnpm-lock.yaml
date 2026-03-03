@@ -346,7 +346,7 @@ importers:
       google-auth-library:
         specifier: ^10.6.1
         version: 10.6.1
-      openclaw:
+      openhand:
         specifier: '>=2026.3.1'
         version: 2026.3.1(@napi-rs/canvas@0.1.95)(@types/express@5.0.6)(audio-decode@2.2.3)(hono@4.11.10)(node-llama-cpp@3.16.2(typescript@5.9.3))
 
@@ -382,7 +382,7 @@ importers:
 
   extensions/memory-core:
     dependencies:
-      openclaw:
+      openhand:
         specifier: '>=2026.3.1'
         version: 2026.3.1(@napi-rs/canvas@0.1.95)(@types/express@5.0.6)(audio-decode@2.2.3)(hono@4.11.10)(node-llama-cpp@3.16.2(typescript@5.9.3))
 
@@ -495,13 +495,13 @@ importers:
 
   packages/clawdbot:
     dependencies:
-      openclaw:
+      openhand:
         specifier: workspace:*
         version: link:../..
 
   packages/moltbot:
     dependencies:
-      openclaw:
+      openhand:
         specifier: workspace:*
         version: link:../..
 
@@ -4942,7 +4942,7 @@ packages:
       zod:
         optional: true
 
-  openclaw@2026.3.1:
+  openhand@2026.3.1:
     resolution: {integrity: sha512-7Pt5ykhaYa8TYpLWnBhaMg6Lp6kfk3rMKgqJ3WWESKM9BizYu1fkH/rF9BLeXlsNASgZdLp4oR8H0XfvIIoXIg==}
     engines: {node: '>=22.12.0'}
     hasBin: true
@@ -11154,7 +11154,7 @@ snapshots:
       ws: 8.19.0
       zod: 4.3.6
 
-  openclaw@2026.3.1(@napi-rs/canvas@0.1.95)(@types/express@5.0.6)(audio-decode@2.2.3)(hono@4.11.10)(node-llama-cpp@3.16.2(typescript@5.9.3)):
+  openhand@2026.3.1(@napi-rs/canvas@0.1.95)(@types/express@5.0.6)(audio-decode@2.2.3)(hono@4.11.10)(node-llama-cpp@3.16.2(typescript@5.9.3)):
     dependencies:
       '@agentclientprotocol/sdk': 0.14.1(zod@4.3.6)
       '@aws-sdk/client-bedrock': 3.1000.0

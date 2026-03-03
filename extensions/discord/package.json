@@ -1,9 +1,9 @@
 {
-  "name": "@openclaw/discord",
+  "name": "@openhand/discord",
   "version": "2026.3.2",
-  "description": "OpenClaw Discord channel plugin",
+  "description": "OpenHand Discord channel plugin",
   "type": "module",
-  "openclaw": {
+  "openhand": {
     "extensions": [
       "./index.ts"
     ]

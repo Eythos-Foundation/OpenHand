@@ -1,94 +1,94 @@
-package ai.openclaw.android.protocol
+package ai.openhand.android.protocol
 
 import org.junit.Assert.assertEquals
 import org.junit.Test
 
-class OpenClawProtocolConstantsTest {
+class OpenHandProtocolConstantsTest {
   @Test
   fun canvasCommandsUseStableStrings() {
-    assertEquals("canvas.present", OpenClawCanvasCommand.Present.rawValue)
-    assertEquals("canvas.hide", OpenClawCanvasCommand.Hide.rawValue)
-    assertEquals("canvas.navigate", OpenClawCanvasCommand.Navigate.rawValue)
-    assertEquals("canvas.eval", OpenClawCanvasCommand.Eval.rawValue)
-    assertEquals("canvas.snapshot", OpenClawCanvasCommand.Snapshot.rawValue)
+    assertEquals("canvas.present", OpenHandCanvasCommand.Present.rawValue)
+    assertEquals("canvas.hide", OpenHandCanvasCommand.Hide.rawValue)
+    assertEquals("canvas.navigate", OpenHandCanvasCommand.Navigate.rawValue)
+    assertEquals("canvas.eval", OpenHandCanvasCommand.Eval.rawValue)
+    assertEquals("canvas.snapshot", OpenHandCanvasCommand.Snapshot.rawValue)
   }
 
   @Test
   fun a2uiCommandsUseStableStrings() {
-    assertEquals("canvas.a2ui.push", OpenClawCanvasA2UICommand.Push.rawValue)
-    assertEquals("canvas.a2ui.pushJSONL", OpenClawCanvasA2UICommand.PushJSONL.rawValue)
-    assertEquals("canvas.a2ui.reset", OpenClawCanvasA2UICommand.Reset.rawValue)
+    assertEquals("canvas.a2ui.push", OpenHandCanvasA2UICommand.Push.rawValue)
+    assertEquals("canvas.a2ui.pushJSONL", OpenHandCanvasA2UICommand.PushJSONL.rawValue)
+    assertEquals("canvas.a2ui.reset", OpenHandCanvasA2UICommand.Reset.rawValue)
   }
 
   @Test
   fun capabilitiesUseStableStrings() {
-    assertEquals("canvas", OpenClawCapability.Canvas.rawValue)
-    assertEquals("camera", OpenClawCapability.Camera.rawValue)
-    assertEquals("screen", OpenClawCapability.Screen.rawValue)
-    assertEquals("voiceWake", OpenClawCapability.VoiceWake.rawValue)
-    assertEquals("location", OpenClawCapability.Location.rawValue)
-    assertEquals("sms", OpenClawCapability.Sms.rawValue)
-    assertEquals("device", OpenClawCapability.Device.rawValue)
-    assertEquals("notifications", OpenClawCapability.Notifications.rawValue)
-    assertEquals("system", OpenClawCapability.System.rawValue)
-    assertEquals("appUpdate", OpenClawCapability.AppUpdate.rawValue)
-    assertEquals("photos", OpenClawCapability.Photos.rawValue)
-    assertEquals("contacts", OpenClawCapability.Contacts.rawValue)
-    assertEquals("calendar", OpenClawCapability.Calendar.rawValue)
-    assertEquals("motion", OpenClawCapability.Motion.rawValue)
+    assertEquals("canvas", OpenHandCapability.Canvas.rawValue)
+    assertEquals("camera", OpenHandCapability.Camera.rawValue)
+    assertEquals("screen", OpenHandCapability.Screen.rawValue)
+    assertEquals("voiceWake", OpenHandCapability.VoiceWake.rawValue)
+    assertEquals("location", OpenHandCapability.Location.rawValue)
+    assertEquals("sms", OpenHandCapability.Sms.rawValue)
+    assertEquals("device", OpenHandCapability.Device.rawValue)
+    assertEquals("notifications", OpenHandCapability.Notifications.rawValue)
+    assertEquals("system", OpenHandCapability.System.rawValue)
+    assertEquals("appUpdate", OpenHandCapability.AppUpdate.rawValue)
+    assertEquals("photos", OpenHandCapability.Photos.rawValue)
+    assertEquals("contacts", OpenHandCapability.Contacts.rawValue)
+    assertEquals("calendar", OpenHandCapability.Calendar.rawValue)
+    assertEquals("motion", OpenHandCapability.Motion.rawValue)
   }
 
   @Test
   fun cameraCommandsUseStableStrings() {
-    assertEquals("camera.list", OpenClawCameraCommand.List.rawValue)
-    assertEquals("camera.snap", OpenClawCameraCommand.Snap.rawValue)
-    assertEquals("camera.clip", OpenClawCameraCommand.Clip.rawValue)
+    assertEquals("camera.list", OpenHandCameraCommand.List.rawValue)
+    assertEquals("camera.snap", OpenHandCameraCommand.Snap.rawValue)
+    assertEquals("camera.clip", OpenHandCameraCommand.Clip.rawValue)
   }
 
   @Test
   fun screenCommandsUseStableStrings() {
-    assertEquals("screen.record", OpenClawScreenCommand.Record.rawValue)
+    assertEquals("screen.record", OpenHandScreenCommand.Record.rawValue)
   }
 
   @Test
   fun notificationsCommandsUseStableStrings() {
-    assertEquals("notifications.list", OpenClawNotificationsCommand.List.rawValue)
-    assertEquals("notifications.actions", OpenClawNotificationsCommand.Actions.rawValue)
+    assertEquals("notifications.list", OpenHandNotificationsCommand.List.rawValue)
+    assertEquals("notifications.actions", OpenHandNotificationsCommand.Actions.rawValue)
   }
 
   @Test
   fun deviceCommandsUseStableStrings() {
-    assertEquals("device.status", OpenClawDeviceCommand.Status.rawValue)
-    assertEquals("device.info", OpenClawDeviceCommand.Info.rawValue)
-    assertEquals("device.permissions", OpenClawDeviceCommand.Permissions.rawValue)
-    assertEquals("device.health", OpenClawDeviceCommand.Health.rawValue)
+    assertEquals("device.status", OpenHandDeviceCommand.Status.rawValue)
+    assertEquals("device.info", OpenHandDeviceCommand.Info.rawValue)
+    assertEquals("device.permissions", OpenHandDeviceCommand.Permissions.rawValue)
+    assertEquals("device.health", OpenHandDeviceCommand.Health.rawValue)
   }
 
   @Test
   fun systemCommandsUseStableStrings() {
-    assertEquals("system.notify", OpenClawSystemCommand.Notify.rawValue)
+    assertEquals("system.notify", OpenHandSystemCommand.Notify.rawValue)
   }
 
   @Test
   fun photosCommandsUseStableStrings() {
-    assertEquals("photos.latest", OpenClawPhotosCommand.Latest.rawValue)
+    assertEquals("photos.latest", OpenHandPhotosCommand.Latest.rawValue)
   }
 
   @Test
   fun contactsCommandsUseStableStrings() {
-    assertEquals("contacts.search", OpenClawContactsCommand.Search.rawValue)
-    assertEquals("contacts.add", OpenClawContactsCommand.Add.rawValue)
+    assertEquals("contacts.search", OpenHandContactsCommand.Search.rawValue)
+    assertEquals("contacts.add", OpenHandContactsCommand.Add.rawValue)
   }
 
   @Test
   fun calendarCommandsUseStableStrings() {
-    assertEquals("calendar.events", OpenClawCalendarCommand.Events.rawValue)
-    assertEquals("calendar.add", OpenClawCalendarCommand.Add.rawValue)
+    assertEquals("calendar.events", OpenHandCalendarCommand.Events.rawValue)
+    assertEquals("calendar.add", OpenHandCalendarCommand.Add.rawValue)
   }
 
   @Test
   fun motionCommandsUseStableStrings() {
-    assertEquals("motion.activity", OpenClawMotionCommand.Activity.rawValue)
-    assertEquals("motion.pedometer", OpenClawMotionCommand.Pedometer.rawValue)
+    assertEquals("motion.activity", OpenHandMotionCommand.Activity.rawValue)
+    assertEquals("motion.pedometer", OpenHandMotionCommand.Pedometer.rawValue)
   }
 }

@@ -1,8 +1,8 @@
 import AppKit
-import OpenClawProtocol
+import OpenHandProtocol
 import SwiftUI
 import Testing
-@testable import OpenClaw
+@testable import OpenHand
 
 @Suite(.serialized)
 @MainActor

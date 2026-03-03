@@ -1,4 +1,4 @@
-package ai.openclaw.android.node
+package ai.openhand.android.node
 
 import android.app.Notification
 import android.app.NotificationManager

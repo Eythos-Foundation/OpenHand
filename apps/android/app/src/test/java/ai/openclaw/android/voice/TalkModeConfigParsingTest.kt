@@ -1,4 +1,4 @@
-package ai.openclaw.android.voice
+package ai.openhand.android.voice
 
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.jsonPrimitive

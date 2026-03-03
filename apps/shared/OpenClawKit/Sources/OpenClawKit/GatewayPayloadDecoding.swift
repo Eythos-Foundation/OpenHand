@@ -1,4 +1,4 @@
-import OpenClawProtocol
+import OpenHandProtocol
 import Foundation
 
 public enum GatewayPayloadDecoding {

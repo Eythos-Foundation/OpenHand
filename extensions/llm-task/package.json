@@ -1,10 +1,10 @@
 {
-  "name": "@openclaw/llm-task",
+  "name": "@openhand/llm-task",
   "version": "2026.3.2",
   "private": true,
-  "description": "OpenClaw JSON-only LLM task plugin",
+  "description": "OpenHand JSON-only LLM task plugin",
   "type": "module",
-  "openclaw": {
+  "openhand": {
     "extensions": [
       "./index.ts"
     ]

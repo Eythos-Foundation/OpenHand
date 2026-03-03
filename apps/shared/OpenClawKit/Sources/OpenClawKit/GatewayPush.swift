@@ -1,4 +1,4 @@
-import OpenClawProtocol
+import OpenHandProtocol
 
 /// Server-push messages from the gateway websocket.
 ///

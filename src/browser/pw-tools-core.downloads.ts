@@ -2,7 +2,7 @@ import crypto from "node:crypto";
 import fs from "node:fs/promises";
 import path from "node:path";
 import type { Page } from "playwright-core";
-import { resolvePreferredOpenClawTmpDir } from "../infra/tmp-openclaw-dir.js";
+import { resolvePreferredOpenHandTmpDir } from "../infra/tmp-openhand-dir.js";
 import { writeViaSiblingTempPath } from "./output-atomic.js";
 import {
   DEFAULT_DOWNLOAD_DIR,
@@ -28,7 +28,7 @@ import { sanitizeUntrustedFileName } from "./safe-filename.js";
 function buildTempDownloadPath(fileName: string): string {
   const id = crypto.randomUUID();
   const safeName = sanitizeUntrustedFileName(fileName, "download.bin");
-  return path.join(resolvePreferredOpenClawTmpDir(), "downloads", `${id}-${safeName}`);
+  return path.join(resolvePreferredOpenHandTmpDir(), "downloads", `${id}-${safeName}`);
 }
 
 function createPageDownloadWaiter(page: Page, timeoutMs: number) {

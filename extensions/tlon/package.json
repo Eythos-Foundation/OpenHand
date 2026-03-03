@@ -1,7 +1,7 @@
 {
-  "name": "@openclaw/tlon",
+  "name": "@openhand/tlon",
   "version": "2026.3.2",
-  "description": "OpenClaw Tlon/Urbit channel plugin",
+  "description": "OpenHand Tlon/Urbit channel plugin",
   "type": "module",
   "dependencies": {
     "@tloncorp/api": "github:tloncorp/api-beta#7eede1c1a756977b09f96aa14a92e2b06318ae87",
@@ -9,7 +9,7 @@
     "@urbit/aura": "^3.0.0",
     "@urbit/http-api": "^3.0.0"
   },
-  "openclaw": {
+  "openhand": {
     "extensions": [
       "./index.ts"
     ],
@@ -24,7 +24,7 @@
       "quickstartAllowFrom": true
     },
     "install": {
-      "npmSpec": "@openclaw/tlon",
+      "npmSpec": "@openhand/tlon",
       "localPath": "extensions/tlon",
       "defaultChoice": "npm"
     }

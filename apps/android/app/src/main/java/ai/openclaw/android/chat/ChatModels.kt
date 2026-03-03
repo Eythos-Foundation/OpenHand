@@ -1,4 +1,4 @@
-package ai.openclaw.android.chat
+package ai.openhand.android.chat
 
 data class ChatMessage(
   val id: String,

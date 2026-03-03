@@ -1,4 +1,4 @@
-import type { OpenClawConfig } from "openclaw/plugin-sdk";
+import type { OpenHandConfig } from "openhand/plugin-sdk";
 import { describe, expect, it, vi } from "vitest";
 
 const handleSlackActionMock = vi.fn();
@@ -112,7 +112,7 @@ describe("slackPlugin outbound", () => {
 
 describe("slackPlugin config", () => {
   it("treats HTTP mode accounts with bot token + signing secret as configured", async () => {
-    const cfg: OpenClawConfig = {
+    const cfg: OpenHandConfig = {
       channels: {
         slack: {
           mode: "http",
@@ -135,7 +135,7 @@ describe("slackPlugin config", () => {
   });
 
   it("keeps socket mode requiring app token", async () => {
-    const cfg: OpenClawConfig = {
+    const cfg: OpenHandConfig = {
       channels: {
         slack: {
           mode: "socket",

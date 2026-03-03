@@ -1,6 +1,6 @@
 import CoreLocation
 import Testing
-@testable import OpenClaw
+@testable import OpenHand
 
 @Suite("PermissionManager Location")
 struct PermissionManagerLocationTests {

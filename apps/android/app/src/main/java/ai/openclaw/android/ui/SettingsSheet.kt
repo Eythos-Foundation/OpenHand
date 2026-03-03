@@ -1,4 +1,4 @@
-package ai.openclaw.android.ui
+package ai.openhand.android.ui
 
 import android.Manifest
 import android.content.Context
@@ -66,10 +66,10 @@ import androidx.core.net.toUri
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleEventObserver
 import androidx.lifecycle.compose.LocalLifecycleOwner
-import ai.openclaw.android.BuildConfig
-import ai.openclaw.android.LocationMode
-import ai.openclaw.android.MainViewModel
-import ai.openclaw.android.node.DeviceNotificationListenerService
+import ai.openhand.android.BuildConfig
+import ai.openhand.android.LocationMode
+import ai.openhand.android.MainViewModel
+import ai.openhand.android.node.DeviceNotificationListenerService
 
 @Composable
 fun SettingsSheet(viewModel: MainViewModel) {
@@ -821,7 +821,7 @@ fun SettingsSheet(viewModel: MainViewModel) {
             modifier = Modifier.fillMaxWidth(),
             colors = listItemColors,
             headlineContent = { Text("While Using", style = mobileHeadline) },
-            supportingContent = { Text("Only while OpenClaw is open.", style = mobileCallout) },
+            supportingContent = { Text("Only while OpenHand is open.", style = mobileCallout) },
             trailingContent = {
               RadioButton(
                 selected = locationMode == LocationMode.WhileUsing,
@@ -881,7 +881,7 @@ fun SettingsSheet(viewModel: MainViewModel) {
         modifier = Modifier.settingsRowModifier(),
         colors = listItemColors,
         headlineContent = { Text("Prevent Sleep", style = mobileHeadline) },
-        supportingContent = { Text("Keeps the screen awake while OpenClaw is open.", style = mobileCallout) },
+        supportingContent = { Text("Keeps the screen awake while OpenHand is open.", style = mobileCallout) },
         trailingContent = { Switch(checked = preventSleep, onCheckedChange = viewModel::setPreventSleep) },
       )
     }
