@@ -1,0 +1,242 @@
+# OpenHand Accessibility Configuration Example
+# Copy this to your ~/.openhand/config.yml and customize
+# Eythos Foundation - Adaptive Technology for Everyone
+
+# ========================================
+# VOICE & SPEECH ACCESSIBILITY
+# ========================================
+accessibility:
+  voice:
+    # Text-to-Speech (TTS) Settings
+    tts:
+      enabled: true
+      provider: system          # Options: system, elevenlabs, google
+      speed: 1.0                # Range: 0.5 (slow) to 2.0 (fast)
+      pitch: 1.0                # Range: 0.5 (low) to 2.0 (high)
+      volume: 1.0               # Range: 0.0 (mute) to 1.0 (max)
+      voice: default            # Voice ID (depends on provider)
+      fallbackToText: true      # Show text if speech fails
+      
+      # Custom pronunciation for difficult words
+      pronunciation:
+        # Word: Pronunciation
+        "OpenHand": "Open Hand"
+        "API": "A P I"
+        "OAuth": "O Auth"
+    
+    # Voice Input Settings
+    input:
+      enabled: true
+      wakeWord: "hey assistant"  # What phrase activates voice control
+      noiseReduction: true        # Filter background noise
+      sensitivity: 0.7            # Range: 0.0 (ignore) to 1.0 (very sensitive)
+      timeout: 10                 # Seconds before stopping listening
+      fallbackToText: true        # Show text input if voice fails
+      confirmCommands: true       # Ask before executing voice commands
+
+# ========================================
+# VISUAL ACCESSIBILITY
+# ========================================
+  visual:
+    # Color & Contrast
+    highContrast: false          # True = maximum contrast for low vision
+    colorScheme: auto            # Options: light, dark, auto (follows system)
+    
+    # Text Size
+    fontSize: medium             # Options: small, medium, large, xlarge
+    lineHeight: 1.5              # Spacing between lines (1.0 = tight, 2.0 = loose)
+    letterSpacing: normal        # Options: tight, normal, wide
+    
+    # Motion & Animation
+    reduceMotion: false          # True = no animations (vestibular disorders)
+    disableAutoplay: true        # Don't auto-play videos/audio
+    
+    # Focus & Navigation
+    focusIndicatorSize: default  # Options: default, large, extra-large
+    showFocusOutline: true       # Visible focus indicator (keyboard navigation)
+    
+    # Color Adjustments (for colorblindness)
+    colorFilter: none            # Options: none, deuteranopia, protanopia, tritanopia
+    
+    # Screen Reader Optimizations
+    screenReaderMode: false      # True = optimized for NVDA/JAWS/VoiceOver
+
+# ========================================
+# COGNITIVE ACCESSIBILITY
+# ========================================
+  cognitive:
+    # Language Simplification
+    simplifiedLanguage: false    # Use simpler words and shorter sentences
+    reducedClutter: false        # Hide non-essential UI elements
+    
+    # Step-by-Step Guidance
+    stepByStepMode: false        # Break complex tasks into simple steps
+    progressIndicators: true     # Show progress bars for long tasks
+    
+    # Confirmations & Safety
+    confirmActions: true         # Ask before destructive actions (delete, etc.)
+    undoEnabled: true            # Allow undo for recent actions
+    
+    # Time & Timing
+    extendedTimeouts: false      # More time to complete tasks
+    pauseableTimers: true        # Allow pausing timed actions
+    
+    # Memory Aids
+    showTooltips: true           # Helpful hints on hover
+    persistentHelp: true         # Keep help visible
+    breadcrumbs: true            # Show "where am I" navigation
+
+# ========================================
+# MOTOR/PHYSICAL ACCESSIBILITY
+# ========================================
+  motor:
+    # Keyboard Navigation
+    keyboardOnly: false          # Optimize for keyboard-only use
+    keyRepeatDelay: 500          # Milliseconds before key repeats
+    stickyKeys: false            # Allow modifier keys to "stick"
+    
+    # Click/Touch
+    largeClickTargets: false     # Bigger buttons (motor control issues)
+    doubleClickTime: 500         # Milliseconds for double-click
+    dragDropEnabled: true        # Allow drag-and-drop (set false if difficult)
+    
+    # Mouse Alternatives
+    voiceNavigation: false       # Navigate UI with voice commands
+    eyeTrackingSupport: false    # Support eye-tracking devices (future)
+
+# ========================================
+# HEARING ACCESSIBILITY
+# ========================================
+  hearing:
+    # Captions & Transcripts
+    alwaysShowCaptions: true     # Show text captions for all speech
+    visualAlerts: true           # Flash screen instead of sound alerts
+    
+    # Audio
+    monoAudio: false             # Combine left/right channels (hearing loss in one ear)
+    audioDescription: false      # Descriptive audio for visual content
+
+# ========================================
+# NEURODIVERSITY SUPPORT
+# ========================================
+  neurodiversity:
+    # ADHD Support
+    focusMode: false             # Minimize distractions
+    quietHours:                  # Pause non-urgent notifications
+      enabled: false
+      start: "22:00"
+      end: "08:00"
+    
+    # Autism Support
+    predictableLayout: true      # UI stays consistent
+    noFlashing: true             # No flashing content (seizure risk)
+    sensoryFriendly: false       # Reduce sensory overload
+    
+    # Dyslexia Support
+    dyslexiaFont: false          # Use OpenDyslexic font
+    highlightText: false         # Highlight text when reading
+
+# ========================================
+# PLATFORM-SPECIFIC
+# ========================================
+platform:
+  # macOS Accessibility
+  macOS:
+    voiceOverOptimized: true     # Optimize for VoiceOver screen reader
+    useSystemVoices: true        # Use macOS voices for TTS
+    respectSystemSettings: true  # Follow macOS accessibility settings
+  
+  # iOS/iPadOS
+  iOS:
+    largerTouchTargets: false    # Bigger buttons for touch
+    reduceTransparency: false    # Solid backgrounds (visual clarity)
+    boldText: false              # Thicker fonts
+  
+  # Android
+  android:
+    talkBackOptimized: true      # Optimize for TalkBack screen reader
+    useSystemTTS: true           # Use Android TTS engine
+  
+  # Windows
+  windows:
+    narratorOptimized: true      # Optimize for Narrator screen reader
+    highContrastMode: auto       # Follow Windows high contrast setting
+
+# ========================================
+# ADVANCED SETTINGS
+# ========================================
+advanced:
+  # Logging & Debug
+  accessibilityLogging: false    # Log accessibility events (debugging)
+  announceErrors: true           # Read errors aloud via TTS
+  
+  # Performance
+  reducedAnimations: false       # Simpler animations (low-end devices)
+  lazyLoadContent: true          # Load content as needed (slower connections)
+  
+  # Customization
+  customCSS: ""                  # Path to custom accessibility CSS
+  customKeyboardShortcuts: {}    # Custom keyboard shortcuts
+
+# ========================================
+# TESTING & COMPLIANCE
+# ========================================
+testing:
+  # Automated Accessibility Testing
+  enableA11yWarnings: true       # Show accessibility warnings in dev mode
+  wcagLevel: AA                  # Target: A, AA, or AAA
+  
+  # User Testing
+  feedbackChannel: "eythosfoundation@gmail.com"
+  reportAccessibilityIssues: true
+
+# ========================================
+# QUICK PRESETS
+# ========================================
+# Uncomment one of these to use a preset:
+
+# # Low Vision Preset
+# preset: low-vision
+# # - High contrast
+# # - Large text
+# # - Screen reader optimized
+# # - No animations
+
+# # Motor Impairment Preset
+# preset: motor
+# # - Large click targets
+# # - Keyboard optimized
+# # - Extended timeouts
+# # - Voice navigation
+
+# # Cognitive Support Preset
+# preset: cognitive
+# # - Simple language
+# # - Step-by-step mode
+# # - Reduced clutter
+# # - Confirmation prompts
+
+# # Deaf/Hard of Hearing Preset
+# preset: hearing
+# # - Always show captions
+# # - Visual alerts
+# # - Mono audio
+
+# # Neurodiversity Preset
+# preset: neurodiversity
+# # - Focus mode
+# # - Predictable layout
+# # - Sensory-friendly
+# # - Dyslexia font
+
+# ========================================
+# NOTES
+# ========================================
+# 1. Not all features are implemented yet - this is a roadmap
+# 2. Test changes with actual users with disabilities
+# 3. Report issues: eythosfoundation@gmail.com
+# 4. Learn more: https://docs.eythosfound.org/accessibility
+# 5. WCAG 2.1 compliance target: AA (industry standard)
+
+# Made with ❤️ by Eythos Foundation
+# Adaptive Technology for Everyone
