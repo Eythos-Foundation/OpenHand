@@ -1,5 +1,5 @@
 import Testing
-@testable import OpenClaw
+@testable import OpenHand
 
 @Suite struct CameraControllerClampTests {
     @Test func clampQualityDefaultsAndBounds() {

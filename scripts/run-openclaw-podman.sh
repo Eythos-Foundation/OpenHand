@@ -1,20 +1,20 @@
 #!/usr/bin/env bash
-# Rootless OpenClaw in Podman: run after one-time setup.
+# Rootless OpenHand in Podman: run after one-time setup.
 #
 # One-time setup (from repo root): ./setup-podman.sh
 # Then:
-#   ./scripts/run-openclaw-podman.sh launch           # Start gateway
-#   ./scripts/run-openclaw-podman.sh launch setup      # Onboarding wizard
+#   ./scripts/run-openhand-podman.sh launch           # Start gateway
+#   ./scripts/run-openhand-podman.sh launch setup      # Onboarding wizard
 #
-# As the openclaw user (no repo needed):
-#   sudo -u openclaw /home/openclaw/run-openclaw-podman.sh
-#   sudo -u openclaw /home/openclaw/run-openclaw-podman.sh setup
+# As the openhand user (no repo needed):
+#   sudo -u openhand /home/openhand/run-openhand-podman.sh
+#   sudo -u openhand /home/openhand/run-openhand-podman.sh setup
 #
 # Legacy: "setup-host" delegates to ../setup-podman.sh
 
 set -euo pipefail
 
-OPENCLAW_USER="${OPENCLAW_PODMAN_USER:-openclaw}"
+OPENHAND_USER="${OPENHAND_PODMAN_USER:-openhand}"
 
 resolve_user_home() {
   local user="$1"
@@ -31,9 +31,9 @@ resolve_user_home() {
   printf '%s' "$home"
 }
 
-OPENCLAW_HOME="$(resolve_user_home "$OPENCLAW_USER")"
-OPENCLAW_UID="$(id -u "$OPENCLAW_USER" 2>/dev/null || true)"
-LAUNCH_SCRIPT="$OPENCLAW_HOME/run-openclaw-podman.sh"
+OPENHAND_HOME="$(resolve_user_home "$OPENHAND_USER")"
+OPENHAND_UID="$(id -u "$OPENHAND_USER" 2>/dev/null || true)"
+LAUNCH_SCRIPT="$OPENHAND_HOME/run-openhand-podman.sh"
 
 # Legacy: setup-host → run setup-podman.sh
 if [[ "${1:-}" == "setup-host" ]]; then
@@ -47,39 +47,39 @@ if [[ "${1:-}" == "setup-host" ]]; then
   exit 1
 fi
 
-# --- Step 2: launch (from repo: re-exec as openclaw in safe cwd; from openclaw home: run container) ---
+# --- Step 2: launch (from repo: re-exec as openhand in safe cwd; from openhand home: run container) ---
 if [[ "${1:-}" == "launch" ]]; then
   shift
-  if [[ -n "${OPENCLAW_UID:-}" && "$(id -u)" -ne "$OPENCLAW_UID" ]]; then
-    # Exec as openclaw with cwd=/tmp so a nologin user never inherits an invalid cwd.
-    exec sudo -u "$OPENCLAW_USER" env HOME="$OPENCLAW_HOME" PATH="$PATH" TERM="${TERM:-}" \
+  if [[ -n "${OPENHAND_UID:-}" && "$(id -u)" -ne "$OPENHAND_UID" ]]; then
+    # Exec as openhand with cwd=/tmp so a nologin user never inherits an invalid cwd.
+    exec sudo -u "$OPENHAND_USER" env HOME="$OPENHAND_HOME" PATH="$PATH" TERM="${TERM:-}" \
       bash -c 'cd /tmp && exec '"$LAUNCH_SCRIPT"' "$@"' _ "$@"
   fi
-  # Already openclaw; fall through to container run (with remaining args, e.g. "setup")
+  # Already openhand; fall through to container run (with remaining args, e.g. "setup")
 fi
 
-# --- Container run (script in openclaw home, run as openclaw) ---
+# --- Container run (script in openhand home, run as openhand) ---
 EFFECTIVE_HOME="${HOME:-}"
-if [[ -n "${OPENCLAW_UID:-}" && "$(id -u)" -eq "$OPENCLAW_UID" ]]; then
-  EFFECTIVE_HOME="$OPENCLAW_HOME"
-  export HOME="$OPENCLAW_HOME"
+if [[ -n "${OPENHAND_UID:-}" && "$(id -u)" -eq "$OPENHAND_UID" ]]; then
+  EFFECTIVE_HOME="$OPENHAND_HOME"
+  export HOME="$OPENHAND_HOME"
 fi
 if [[ -z "${EFFECTIVE_HOME:-}" ]]; then
-  EFFECTIVE_HOME="${OPENCLAW_HOME:-/tmp}"
+  EFFECTIVE_HOME="${OPENHAND_HOME:-/tmp}"
 fi
-CONFIG_DIR="${OPENCLAW_CONFIG_DIR:-$EFFECTIVE_HOME/.openclaw}"
-ENV_FILE="${OPENCLAW_PODMAN_ENV:-$CONFIG_DIR/.env}"
-WORKSPACE_DIR="${OPENCLAW_WORKSPACE_DIR:-$CONFIG_DIR/workspace}"
-CONTAINER_NAME="${OPENCLAW_PODMAN_CONTAINER:-openclaw}"
-OPENCLAW_IMAGE="${OPENCLAW_PODMAN_IMAGE:-openclaw:local}"
-PODMAN_PULL="${OPENCLAW_PODMAN_PULL:-never}"
-HOST_GATEWAY_PORT="${OPENCLAW_PODMAN_GATEWAY_HOST_PORT:-${OPENCLAW_GATEWAY_PORT:-18789}}"
-HOST_BRIDGE_PORT="${OPENCLAW_PODMAN_BRIDGE_HOST_PORT:-${OPENCLAW_BRIDGE_PORT:-18790}}"
+CONFIG_DIR="${OPENHAND_CONFIG_DIR:-$EFFECTIVE_HOME/.openhand}"
+ENV_FILE="${OPENHAND_PODMAN_ENV:-$CONFIG_DIR/.env}"
+WORKSPACE_DIR="${OPENHAND_WORKSPACE_DIR:-$CONFIG_DIR/workspace}"
+CONTAINER_NAME="${OPENHAND_PODMAN_CONTAINER:-openhand}"
+OPENHAND_IMAGE="${OPENHAND_PODMAN_IMAGE:-openhand:local}"
+PODMAN_PULL="${OPENHAND_PODMAN_PULL:-never}"
+HOST_GATEWAY_PORT="${OPENHAND_PODMAN_GATEWAY_HOST_PORT:-${OPENHAND_GATEWAY_PORT:-18789}}"
+HOST_BRIDGE_PORT="${OPENHAND_PODMAN_BRIDGE_HOST_PORT:-${OPENHAND_BRIDGE_PORT:-18790}}"
 # Keep Podman default local-only unless explicitly overridden.
 # Non-loopback binds require gateway.controlUi.allowedOrigins (security hardening).
-GATEWAY_BIND="${OPENCLAW_GATEWAY_BIND:-loopback}"
+GATEWAY_BIND="${OPENHAND_GATEWAY_BIND:-loopback}"
 
-# Safe cwd for podman (openclaw is nologin; avoid inherited cwd from sudo)
+# Safe cwd for podman (openhand is nologin; avoid inherited cwd from sudo)
 cd "$EFFECTIVE_HOME" 2>/dev/null || cd /tmp 2>/dev/null || true
 
 RUN_SETUP=false
@@ -136,27 +136,27 @@ PY
     od -An -N32 -tx1 /dev/urandom | tr -d " \n"
     return 0
   fi
-  echo "Missing dependency: need openssl or python3 (or od) to generate OPENCLAW_GATEWAY_TOKEN." >&2
+  echo "Missing dependency: need openssl or python3 (or od) to generate OPENHAND_GATEWAY_TOKEN." >&2
   exit 1
 }
 
-if [[ -z "${OPENCLAW_GATEWAY_TOKEN:-}" ]]; then
-  export OPENCLAW_GATEWAY_TOKEN="$(generate_token_hex_32)"
+if [[ -z "${OPENHAND_GATEWAY_TOKEN:-}" ]]; then
+  export OPENHAND_GATEWAY_TOKEN="$(generate_token_hex_32)"
   mkdir -p "$(dirname "$ENV_FILE")"
-  upsert_env_var "$ENV_FILE" "OPENCLAW_GATEWAY_TOKEN" "$OPENCLAW_GATEWAY_TOKEN"
-  echo "Generated OPENCLAW_GATEWAY_TOKEN and wrote it to $ENV_FILE." >&2
+  upsert_env_var "$ENV_FILE" "OPENHAND_GATEWAY_TOKEN" "$OPENHAND_GATEWAY_TOKEN"
+  echo "Generated OPENHAND_GATEWAY_TOKEN and wrote it to $ENV_FILE." >&2
 fi
 
 # The gateway refuses to start unless gateway.mode=local is set in config.
 # Keep this minimal; users can run the wizard later to configure channels/providers.
-CONFIG_JSON="$CONFIG_DIR/openclaw.json"
+CONFIG_JSON="$CONFIG_DIR/openhand.json"
 if [[ ! -f "$CONFIG_JSON" ]]; then
   echo '{ gateway: { mode: "local" } }' >"$CONFIG_JSON"
   chmod 600 "$CONFIG_JSON" 2>/dev/null || true
   echo "Created $CONFIG_JSON (minimal gateway.mode=local)." >&2
 fi
 
-PODMAN_USERNS="${OPENCLAW_PODMAN_USERNS:-keep-id}"
+PODMAN_USERNS="${OPENHAND_PODMAN_USERNS:-keep-id}"
 USERNS_ARGS=()
 RUN_USER_ARGS=()
 case "$PODMAN_USERNS" in
@@ -164,7 +164,7 @@ case "$PODMAN_USERNS" in
   keep-id) USERNS_ARGS=(--userns=keep-id) ;;
   host) USERNS_ARGS=(--userns=host) ;;
   *)
-    echo "Unsupported OPENCLAW_PODMAN_USERNS=$PODMAN_USERNS (expected: keep-id, auto, host)." >&2
+    echo "Unsupported OPENHAND_PODMAN_USERNS=$PODMAN_USERNS (expected: keep-id, auto, host)." >&2
     exit 2
     ;;
 esac
@@ -175,7 +175,7 @@ if [[ "$PODMAN_USERNS" == "keep-id" ]]; then
   RUN_USER_ARGS=(--user "${RUN_UID}:${RUN_GID}")
   echo "Starting container as uid=${RUN_UID} gid=${RUN_GID} (must match owner of $CONFIG_DIR)" >&2
 else
-  echo "Starting container without --user (OPENCLAW_PODMAN_USERNS=$PODMAN_USERNS), mounts may require ownership fixes." >&2
+  echo "Starting container without --user (OPENHAND_PODMAN_USERNS=$PODMAN_USERNS), mounts may require ownership fixes." >&2
 fi
 
 ENV_FILE_ARGS=()
@@ -186,11 +186,11 @@ if [[ "$RUN_SETUP" == true ]]; then
     --init \
     "${USERNS_ARGS[@]}" "${RUN_USER_ARGS[@]}" \
     -e HOME=/home/node -e TERM=xterm-256color -e BROWSER=echo \
-    -e OPENCLAW_GATEWAY_TOKEN="$OPENCLAW_GATEWAY_TOKEN" \
-    -v "$CONFIG_DIR:/home/node/.openclaw:rw" \
-    -v "$WORKSPACE_DIR:/home/node/.openclaw/workspace:rw" \
+    -e OPENHAND_GATEWAY_TOKEN="$OPENHAND_GATEWAY_TOKEN" \
+    -v "$CONFIG_DIR:/home/node/.openhand:rw" \
+    -v "$WORKSPACE_DIR:/home/node/.openhand/workspace:rw" \
     "${ENV_FILE_ARGS[@]}" \
-    "$OPENCLAW_IMAGE" \
+    "$OPENHAND_IMAGE" \
     node dist/index.js onboard "$@"
 fi
 
@@ -199,13 +199,13 @@ podman run --pull="$PODMAN_PULL" -d --replace \
   --init \
   "${USERNS_ARGS[@]}" "${RUN_USER_ARGS[@]}" \
   -e HOME=/home/node -e TERM=xterm-256color \
-  -e OPENCLAW_GATEWAY_TOKEN="$OPENCLAW_GATEWAY_TOKEN" \
+  -e OPENHAND_GATEWAY_TOKEN="$OPENHAND_GATEWAY_TOKEN" \
   "${ENV_FILE_ARGS[@]}" \
-  -v "$CONFIG_DIR:/home/node/.openclaw:rw" \
-  -v "$WORKSPACE_DIR:/home/node/.openclaw/workspace:rw" \
+  -v "$CONFIG_DIR:/home/node/.openhand:rw" \
+  -v "$WORKSPACE_DIR:/home/node/.openhand/workspace:rw" \
   -p "${HOST_GATEWAY_PORT}:18789" \
   -p "${HOST_BRIDGE_PORT}:18790" \
-  "$OPENCLAW_IMAGE" \
+  "$OPENHAND_IMAGE" \
   node dist/index.js gateway --bind "$GATEWAY_BIND" --port 18789
 
 echo "Container $CONTAINER_NAME started. Dashboard: http://127.0.0.1:${HOST_GATEWAY_PORT}/"

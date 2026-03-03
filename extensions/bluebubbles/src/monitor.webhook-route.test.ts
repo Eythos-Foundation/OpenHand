@@ -1,4 +1,4 @@
-import type { OpenClawConfig } from "openclaw/plugin-sdk";
+import type { OpenHandConfig } from "openhand/plugin-sdk";
 import { afterEach, describe, expect, it } from "vitest";
 import { createEmptyPluginRegistry } from "../../../src/plugins/registry.js";
 import { setActivePluginRegistry } from "../../../src/plugins/runtime.js";
@@ -8,7 +8,7 @@ import { registerBlueBubblesWebhookTarget } from "./monitor.js";
 function createTarget(): WebhookTarget {
   return {
     account: { accountId: "default" } as WebhookTarget["account"],
-    config: {} as OpenClawConfig,
+    config: {} as OpenHandConfig,
     runtime: {},
     core: {} as WebhookTarget["core"],
     path: "/bluebubbles-webhook",

@@ -1,5 +1,5 @@
 import Foundation
-import OpenClawProtocol
+import OpenHandProtocol
 
 extension ChannelsStore {
     func start() {

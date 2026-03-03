@@ -1,9 +1,9 @@
 {
-  "name": "@openclaw/lobster",
+  "name": "@openhand/lobster",
   "version": "2026.3.2",
   "description": "Lobster workflow tool plugin (typed pipelines + resumable approvals)",
   "type": "module",
-  "openclaw": {
+  "openhand": {
     "extensions": [
       "./index.ts"
     ]

@@ -1,4 +1,4 @@
-package ai.openclaw.android.gateway
+package ai.openhand.android.gateway
 
 internal object DeviceAuthPayload {
   fun buildV3(

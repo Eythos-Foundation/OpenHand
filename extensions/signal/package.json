@@ -1,10 +1,10 @@
 {
-  "name": "@openclaw/signal",
+  "name": "@openhand/signal",
   "version": "2026.3.2",
   "private": true,
-  "description": "OpenClaw Signal channel plugin",
+  "description": "OpenHand Signal channel plugin",
   "type": "module",
-  "openclaw": {
+  "openhand": {
     "extensions": [
       "./index.ts"
     ]

@@ -1,8 +1,8 @@
 import Foundation
-import OpenClawKit
+import OpenHandKit
 import os
 import Testing
-@testable import OpenClaw
+@testable import OpenHand
 
 @Suite struct GatewayConnectionTests {
     private func makeConnection(

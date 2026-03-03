@@ -1,14 +1,14 @@
-package ai.openclaw.android.node
+package ai.openhand.android.node
 
 import android.os.Build
-import ai.openclaw.android.BuildConfig
-import ai.openclaw.android.SecurePrefs
-import ai.openclaw.android.gateway.GatewayClientInfo
-import ai.openclaw.android.gateway.GatewayConnectOptions
-import ai.openclaw.android.gateway.GatewayEndpoint
-import ai.openclaw.android.gateway.GatewayTlsParams
-import ai.openclaw.android.LocationMode
-import ai.openclaw.android.VoiceWakeMode
+import ai.openhand.android.BuildConfig
+import ai.openhand.android.SecurePrefs
+import ai.openhand.android.gateway.GatewayClientInfo
+import ai.openhand.android.gateway.GatewayConnectOptions
+import ai.openhand.android.gateway.GatewayEndpoint
+import ai.openhand.android.gateway.GatewayTlsParams
+import ai.openhand.android.LocationMode
+import ai.openhand.android.VoiceWakeMode
 
 class ConnectionManager(
   private val prefs: SecurePrefs,
@@ -109,7 +109,7 @@ class ConnectionManager(
     val version = resolvedVersionName()
     val release = Build.VERSION.RELEASE?.trim().orEmpty()
     val releaseLabel = if (release.isEmpty()) "unknown" else release
-    return "OpenClawAndroid/$version (Android $releaseLabel; SDK ${Build.VERSION.SDK_INT})"
+    return "OpenHandAndroid/$version (Android $releaseLabel; SDK ${Build.VERSION.SDK_INT})"
   }
 
   fun buildClientInfo(clientId: String, clientMode: String): GatewayClientInfo {
@@ -132,7 +132,7 @@ class ConnectionManager(
       caps = buildCapabilities(),
       commands = buildInvokeCommands(),
       permissions = emptyMap(),
-      client = buildClientInfo(clientId = "openclaw-android", clientMode = "node"),
+      client = buildClientInfo(clientId = "openhand-android", clientMode = "node"),
       userAgent = buildUserAgent(),
     )
   }
@@ -144,7 +144,7 @@ class ConnectionManager(
       caps = emptyList(),
       commands = emptyList(),
       permissions = emptyMap(),
-      client = buildClientInfo(clientId = "openclaw-android", clientMode = "ui"),
+      client = buildClientInfo(clientId = "openhand-android", clientMode = "ui"),
       userAgent = buildUserAgent(),
     )
   }

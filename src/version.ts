@@ -1,7 +1,7 @@
 import { createRequire } from "node:module";
 
-declare const __OPENCLAW_VERSION__: string | undefined;
-const CORE_PACKAGE_NAME = "openclaw";
+declare const __OPENHAND_VERSION__: string | undefined;
+const CORE_PACKAGE_NAME = "openhand";
 
 const PACKAGE_JSON_CANDIDATES = [
   "../package.json",
@@ -96,18 +96,18 @@ export function resolveRuntimeServiceVersion(
 ): string {
   return (
     firstNonEmpty(
-      env["OPENCLAW_VERSION"],
-      env["OPENCLAW_SERVICE_VERSION"],
+      env["OPENHAND_VERSION"],
+      env["OPENHAND_SERVICE_VERSION"],
       env["npm_package_version"],
     ) ?? fallback
   );
 }
 
-// Single source of truth for the current OpenClaw version.
+// Single source of truth for the current OpenHand version.
 // - Embedded/bundled builds: injected define or env var.
 // - Dev/npm builds: package.json.
 export const VERSION = resolveBinaryVersion({
   moduleUrl: import.meta.url,
-  injectedVersion: typeof __OPENCLAW_VERSION__ === "string" ? __OPENCLAW_VERSION__ : undefined,
-  bundledVersion: process.env.OPENCLAW_BUNDLED_VERSION,
+  injectedVersion: typeof __OPENHAND_VERSION__ === "string" ? __OPENHAND_VERSION__ : undefined,
+  bundledVersion: process.env.OPENHAND_BUNDLED_VERSION,
 });

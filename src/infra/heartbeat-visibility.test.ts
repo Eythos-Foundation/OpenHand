@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import type { OpenClawConfig } from "../config/config.js";
+import type { OpenHandConfig } from "../config/config.js";
 import { resolveHeartbeatVisibility } from "./heartbeat-visibility.js";
 
 describe("resolveHeartbeatVisibility", () => {
@@ -7,17 +7,17 @@ describe("resolveHeartbeatVisibility", () => {
     showOk?: boolean;
     showAlerts?: boolean;
     useIndicator?: boolean;
-  }): OpenClawConfig {
+  }): OpenHandConfig {
     return {
       channels: {
         defaults: {
           heartbeat,
         },
       },
-    } as OpenClawConfig;
+    } as OpenHandConfig;
   }
 
-  function createTelegramAccountHeartbeatConfig(): OpenClawConfig {
+  function createTelegramAccountHeartbeatConfig(): OpenHandConfig {
     return {
       channels: {
         telegram: {
@@ -33,11 +33,11 @@ describe("resolveHeartbeatVisibility", () => {
           },
         },
       },
-    } as OpenClawConfig;
+    } as OpenHandConfig;
   }
 
   it("returns default values when no config is provided", () => {
-    const cfg = {} as OpenClawConfig;
+    const cfg = {} as OpenHandConfig;
     const result = resolveHeartbeatVisibility({ cfg, channel: "telegram" });
 
     expect(result).toEqual({
@@ -79,7 +79,7 @@ describe("resolveHeartbeatVisibility", () => {
           },
         },
       },
-    } as OpenClawConfig;
+    } as OpenHandConfig;
 
     const result = resolveHeartbeatVisibility({ cfg, channel: "telegram" });
 
@@ -115,7 +115,7 @@ describe("resolveHeartbeatVisibility", () => {
           },
         },
       },
-    } as OpenClawConfig;
+    } as OpenHandConfig;
 
     const result = resolveHeartbeatVisibility({
       cfg,
@@ -147,7 +147,7 @@ describe("resolveHeartbeatVisibility", () => {
           },
         },
       },
-    } as OpenClawConfig;
+    } as OpenHandConfig;
 
     const result = resolveHeartbeatVisibility({
       cfg,
@@ -190,7 +190,7 @@ describe("resolveHeartbeatVisibility", () => {
           },
         },
       },
-    } as OpenClawConfig;
+    } as OpenHandConfig;
 
     const result = resolveHeartbeatVisibility({ cfg, channel: "whatsapp" });
 
@@ -210,7 +210,7 @@ describe("resolveHeartbeatVisibility", () => {
           },
         },
       },
-    } as OpenClawConfig;
+    } as OpenHandConfig;
 
     const result = resolveHeartbeatVisibility({ cfg, channel: "discord" });
 
@@ -232,7 +232,7 @@ describe("resolveHeartbeatVisibility", () => {
           },
         },
       },
-    } as OpenClawConfig;
+    } as OpenHandConfig;
 
     const result = resolveHeartbeatVisibility({ cfg, channel: "slack" });
 
@@ -260,7 +260,7 @@ describe("resolveHeartbeatVisibility", () => {
   });
 
   it("webchat returns defaults when no channel defaults configured", () => {
-    const cfg = {} as OpenClawConfig;
+    const cfg = {} as OpenHandConfig;
 
     const result = resolveHeartbeatVisibility({ cfg, channel: "webchat" });
 
@@ -280,7 +280,7 @@ describe("resolveHeartbeatVisibility", () => {
           },
         },
       },
-    } as OpenClawConfig;
+    } as OpenHandConfig;
 
     const result = resolveHeartbeatVisibility({
       cfg,

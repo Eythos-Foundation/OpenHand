@@ -1,4 +1,4 @@
-import { loadOutboundMediaFromUrl } from "openclaw/plugin-sdk";
+import { loadOutboundMediaFromUrl } from "openhand/plugin-sdk";
 import { getMattermostRuntime } from "../runtime.js";
 import { resolveMattermostAccount } from "./accounts.js";
 import {

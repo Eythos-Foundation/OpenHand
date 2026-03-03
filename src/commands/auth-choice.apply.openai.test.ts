@@ -10,14 +10,14 @@ import {
 
 describe("applyAuthChoiceOpenAI", () => {
   const lifecycle = createAuthTestLifecycle([
-    "OPENCLAW_STATE_DIR",
-    "OPENCLAW_AGENT_DIR",
+    "OPENHAND_STATE_DIR",
+    "OPENHAND_AGENT_DIR",
     "PI_CODING_AGENT_DIR",
     "OPENAI_API_KEY",
   ]);
 
   async function setupTempState() {
-    const env = await setupAuthTestEnv("openclaw-openai-");
+    const env = await setupAuthTestEnv("openhand-openai-");
     lifecycle.setStateDir(env.stateDir);
     return env.agentDir;
   }

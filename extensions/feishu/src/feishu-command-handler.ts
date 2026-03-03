@@ -1,4 +1,4 @@
-import type { PluginHookRunner } from "openclaw/plugin-sdk";
+import type { PluginHookRunner } from "openhand/plugin-sdk";
 import { DEFAULT_RESET_TRIGGERS } from "../../../config/sessions/types.js";
 
 /**

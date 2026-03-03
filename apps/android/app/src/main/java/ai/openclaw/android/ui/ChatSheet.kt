@@ -1,8 +1,8 @@
-package ai.openclaw.android.ui
+package ai.openhand.android.ui
 
 import androidx.compose.runtime.Composable
-import ai.openclaw.android.MainViewModel
-import ai.openclaw.android.ui.chat.ChatSheetContent
+import ai.openhand.android.MainViewModel
+import ai.openhand.android.ui.chat.ChatSheetContent
 
 @Composable
 fun ChatSheet(viewModel: MainViewModel) {

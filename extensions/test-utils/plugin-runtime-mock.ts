@@ -1,5 +1,5 @@
-import type { PluginRuntime } from "openclaw/plugin-sdk";
-import { removeAckReactionAfterReply, shouldAckReaction } from "openclaw/plugin-sdk";
+import type { PluginRuntime } from "openhand/plugin-sdk";
+import { removeAckReactionAfterReply, shouldAckReaction } from "openhand/plugin-sdk";
 import { vi } from "vitest";
 
 type DeepPartial<T> = {
@@ -240,7 +240,7 @@ export function createPluginRuntimeMock(overrides: DeepPartial<PluginRuntime> = 
       })),
     },
     state: {
-      resolveStateDir: vi.fn(() => "/tmp/openclaw"),
+      resolveStateDir: vi.fn(() => "/tmp/openhand"),
     },
   };
 

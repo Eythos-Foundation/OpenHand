@@ -1,7 +1,7 @@
-package ai.openclaw.android.node
+package ai.openhand.android.node
 
-import ai.openclaw.android.SecurePrefs
-import ai.openclaw.android.gateway.GatewaySession
+import ai.openhand.android.SecurePrefs
+import ai.openhand.android.gateway.GatewaySession
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay

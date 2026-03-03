@@ -1,5 +1,5 @@
 import Testing
-@testable import OpenClawChatUI
+@testable import OpenHandChatUI
 
 @Suite("ToolResultTextFormatter")
 struct ToolResultTextFormatterTests {

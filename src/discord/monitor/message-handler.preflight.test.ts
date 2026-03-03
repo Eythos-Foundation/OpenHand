@@ -137,14 +137,14 @@ describe("preflightDiscordMessage", () => {
           mainKey: "main",
           scope: "per-sender",
         },
-      } as import("../../config/config.js").OpenClawConfig,
+      } as import("../../config/config.js").OpenHandConfig,
       discordConfig: {
         allowBots: true,
-      } as NonNullable<import("../../config/config.js").OpenClawConfig["channels"]>["discord"],
+      } as NonNullable<import("../../config/config.js").OpenHandConfig["channels"]>["discord"],
       accountId: "default",
       token: "token",
       runtime: {} as import("../../runtime.js").RuntimeEnv,
-      botUserId: "openclaw-bot",
+      botUserId: "openhand-bot",
       guildHistories: new Map(),
       historyLimit: 0,
       mediaMaxBytes: 1_000_000,
@@ -174,7 +174,7 @@ describe("preflightDiscordMessage", () => {
   });
 
   it("uses attachment content_type for guild audio preflight mention detection", async () => {
-    transcribeFirstAudioMock.mockResolvedValue("hey openclaw");
+    transcribeFirstAudioMock.mockResolvedValue("hey openhand");
 
     const channelId = "channel-audio-1";
     const client = {
@@ -221,17 +221,17 @@ describe("preflightDiscordMessage", () => {
         },
         messages: {
           groupChat: {
-            mentionPatterns: ["openclaw"],
+            mentionPatterns: ["openhand"],
           },
         },
-      } as import("../../config/config.js").OpenClawConfig,
+      } as import("../../config/config.js").OpenHandConfig,
       discordConfig: {} as NonNullable<
-        import("../../config/config.js").OpenClawConfig["channels"]
+        import("../../config/config.js").OpenHandConfig["channels"]
       >["discord"],
       accountId: "default",
       token: "token",
       runtime: {} as import("../../runtime.js").RuntimeEnv,
-      botUserId: "openclaw-bot",
+      botUserId: "openhand-bot",
       guildHistories: new Map(),
       historyLimit: 0,
       mediaMaxBytes: 1_000_000,

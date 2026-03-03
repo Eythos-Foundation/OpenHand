@@ -1,4 +1,4 @@
-package ai.openclaw.android.ui
+package ai.openhand.android.ui
 
 import android.Manifest
 import android.app.Activity
@@ -66,9 +66,9 @@ import androidx.core.content.ContextCompat
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleEventObserver
 import androidx.lifecycle.compose.LocalLifecycleOwner
-import ai.openclaw.android.MainViewModel
-import ai.openclaw.android.voice.VoiceConversationEntry
-import ai.openclaw.android.voice.VoiceConversationRole
+import ai.openhand.android.MainViewModel
+import ai.openhand.android.voice.VoiceConversationEntry
+import ai.openhand.android.voice.VoiceConversationRole
 import kotlin.math.max
 
 @Composable
@@ -345,7 +345,7 @@ private fun VoiceTurnBubble(entry: VoiceConversationEntry) {
         verticalArrangement = Arrangement.spacedBy(3.dp),
       ) {
         Text(
-          if (isUser) "You" else "OpenClaw",
+          if (isUser) "You" else "OpenHand",
           style = mobileCaption2.copy(fontWeight = FontWeight.SemiBold, letterSpacing = 0.6.sp),
           color = if (isUser) mobileAccent else mobileTextSecondary,
         )
@@ -374,7 +374,7 @@ private fun VoiceThinkingBubble() {
         verticalAlignment = Alignment.CenterVertically,
       ) {
         ThinkingDots(color = mobileTextSecondary)
-        Text("OpenClaw is thinking…", style = mobileCallout, color = mobileTextSecondary)
+        Text("OpenHand is thinking…", style = mobileCallout, color = mobileTextSecondary)
       }
     }
   }

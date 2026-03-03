@@ -1,4 +1,4 @@
-package ai.openclaw.android.node
+package ai.openhand.android.node
 
 import android.Manifest
 import android.content.ContentResolver
@@ -12,7 +12,7 @@ import android.os.Bundle
 import android.provider.MediaStore
 import androidx.core.content.ContextCompat
 import androidx.core.graphics.scale
-import ai.openclaw.android.gateway.GatewaySession
+import ai.openhand.android.gateway.GatewaySession
 import java.io.ByteArrayOutputStream
 import java.time.Instant
 import kotlin.math.max

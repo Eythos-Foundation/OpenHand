@@ -26,8 +26,8 @@ const buildGatewayInstallPlan = vi.fn(
     programArguments: ["/bin/node", "cli", "gateway", "--port", String(params.port)],
     workingDirectory: process.cwd(),
     environment: {
-      OPENCLAW_GATEWAY_PORT: String(params.port),
-      ...(params.token ? { OPENCLAW_GATEWAY_TOKEN: params.token } : {}),
+      OPENHAND_GATEWAY_PORT: String(params.port),
+      ...(params.token ? { OPENHAND_GATEWAY_TOKEN: params.token } : {}),
     },
   }),
 );
@@ -113,15 +113,15 @@ describe("daemon-cli coverage", () => {
   beforeEach(() => {
     daemonProgram = createDaemonProgram();
     envSnapshot = captureEnv([
-      "OPENCLAW_STATE_DIR",
-      "OPENCLAW_CONFIG_PATH",
-      "OPENCLAW_GATEWAY_PORT",
-      "OPENCLAW_PROFILE",
+      "OPENHAND_STATE_DIR",
+      "OPENHAND_CONFIG_PATH",
+      "OPENHAND_GATEWAY_PORT",
+      "OPENHAND_PROFILE",
     ]);
-    process.env.OPENCLAW_STATE_DIR = "/tmp/openclaw-cli-state";
-    process.env.OPENCLAW_CONFIG_PATH = "/tmp/openclaw-cli-state/openclaw.json";
-    delete process.env.OPENCLAW_GATEWAY_PORT;
-    delete process.env.OPENCLAW_PROFILE;
+    process.env.OPENHAND_STATE_DIR = "/tmp/openhand-cli-state";
+    process.env.OPENHAND_CONFIG_PATH = "/tmp/openhand-cli-state/openhand.json";
+    delete process.env.OPENHAND_GATEWAY_PORT;
+    delete process.env.OPENHAND_PROFILE;
     serviceReadCommand.mockResolvedValue(null);
     buildGatewayInstallPlan.mockClear();
   });
@@ -150,12 +150,12 @@ describe("daemon-cli coverage", () => {
     serviceReadCommand.mockResolvedValueOnce({
       programArguments: ["/bin/node", "cli", "gateway", "--port", "19001"],
       environment: {
-        OPENCLAW_PROFILE: "dev",
-        OPENCLAW_STATE_DIR: "/tmp/openclaw-daemon-state",
-        OPENCLAW_CONFIG_PATH: "/tmp/openclaw-daemon-state/openclaw.json",
-        OPENCLAW_GATEWAY_PORT: "19001",
+        OPENHAND_PROFILE: "dev",
+        OPENHAND_STATE_DIR: "/tmp/openhand-daemon-state",
+        OPENHAND_CONFIG_PATH: "/tmp/openhand-daemon-state/openhand.json",
+        OPENHAND_GATEWAY_PORT: "19001",
       },
-      sourcePath: "/tmp/ai.openclaw.gateway.plist",
+      sourcePath: "/tmp/ai.openhand.gateway.plist",
     });
 
     await runDaemonCommand(["daemon", "status", "--json"]);

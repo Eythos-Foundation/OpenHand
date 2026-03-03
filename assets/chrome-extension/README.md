@@ -1,16 +1,16 @@
-# OpenClaw Chrome Extension (Browser Relay)
+# OpenHand Chrome Extension (Browser Relay)
 
-Purpose: attach OpenClaw to an existing Chrome tab so the Gateway can automate it (via the local CDP relay server).
+Purpose: attach OpenHand to an existing Chrome tab so the Gateway can automate it (via the local CDP relay server).
 
 ## Dev / load unpacked
 
-1. Build/run OpenClaw Gateway with browser control enabled.
+1. Build/run OpenHand Gateway with browser control enabled.
 2. Ensure the relay server is reachable at `http://127.0.0.1:18792/` (default).
 3. Install the extension to a stable path:
 
    ```bash
-   openclaw browser extension install
-   openclaw browser extension path
+   openhand browser extension install
+   openhand browser extension path
    ```
 
 4. Chrome → `chrome://extensions` → enable “Developer mode”.
@@ -20,4 +20,4 @@ Purpose: attach OpenClaw to an existing Chrome tab so the Gateway can automate i
 ## Options
 
 - `Relay port`: defaults to `18792`.
-- `Gateway token`: required. Set this to `gateway.auth.token` (or `OPENCLAW_GATEWAY_TOKEN`).
+- `Gateway token`: required. Set this to `gateway.auth.token` (or `OPENHAND_GATEWAY_TOKEN`).

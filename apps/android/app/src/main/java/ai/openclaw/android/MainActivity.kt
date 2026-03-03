@@ -1,4 +1,4 @@
-package ai.openclaw.android
+package ai.openhand.android
 
 import android.os.Bundle
 import android.view.WindowManager
@@ -11,8 +11,8 @@ import androidx.compose.ui.Modifier
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
-import ai.openclaw.android.ui.RootScreen
-import ai.openclaw.android.ui.OpenClawTheme
+import ai.openhand.android.ui.RootScreen
+import ai.openhand.android.ui.OpenHandTheme
 import kotlinx.coroutines.launch
 
 class MainActivity : ComponentActivity() {
@@ -44,7 +44,7 @@ class MainActivity : ComponentActivity() {
     }
 
     setContent {
-      OpenClawTheme {
+      OpenHandTheme {
         Surface(modifier = Modifier) {
           RootScreen(viewModel = viewModel)
         }

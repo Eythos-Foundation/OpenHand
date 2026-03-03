@@ -1,7 +1,7 @@
-import type { WizardPrompter } from "openclaw/plugin-sdk";
+import type { WizardPrompter } from "openhand/plugin-sdk";
 import { describe, expect, it, vi } from "vitest";
 
-vi.mock("openclaw/plugin-sdk", () => ({
+vi.mock("openhand/plugin-sdk", () => ({
   DEFAULT_ACCOUNT_ID: "default",
   addWildcardAllowFrom: vi.fn(),
   formatDocsLink: (_url: string, fallback: string) => fallback,

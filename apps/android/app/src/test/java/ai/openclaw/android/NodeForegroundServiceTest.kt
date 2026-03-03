@@ -1,4 +1,4 @@
-package ai.openclaw.android
+package ai.openhand.android
 
 import android.app.Notification
 import android.content.Intent

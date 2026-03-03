@@ -1,12 +1,12 @@
 {
-  "name": "@openclaw/zalo",
+  "name": "@openhand/zalo",
   "version": "2026.3.2",
-  "description": "OpenClaw Zalo channel plugin",
+  "description": "OpenHand Zalo channel plugin",
   "type": "module",
   "dependencies": {
     "undici": "7.22.0"
   },
-  "openclaw": {
+  "openhand": {
     "extensions": [
       "./index.ts"
     ],
@@ -24,7 +24,7 @@
       "quickstartAllowFrom": true
     },
     "install": {
-      "npmSpec": "@openclaw/zalo",
+      "npmSpec": "@openhand/zalo",
       "localPath": "extensions/zalo",
       "defaultChoice": "npm"
     }

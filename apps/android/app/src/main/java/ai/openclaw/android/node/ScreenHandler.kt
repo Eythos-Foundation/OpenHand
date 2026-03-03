@@ -1,6 +1,6 @@
-package ai.openclaw.android.node
+package ai.openhand.android.node
 
-import ai.openclaw.android.gateway.GatewaySession
+import ai.openhand.android.gateway.GatewaySession
 
 class ScreenHandler(
   private val screenRecorder: ScreenRecordManager,

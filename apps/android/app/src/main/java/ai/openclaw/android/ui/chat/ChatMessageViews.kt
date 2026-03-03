@@ -1,4 +1,4 @@
-package ai.openclaw.android.ui.chat
+package ai.openhand.android.ui.chat
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
@@ -25,24 +25,24 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import ai.openclaw.android.chat.ChatMessage
-import ai.openclaw.android.chat.ChatMessageContent
-import ai.openclaw.android.chat.ChatPendingToolCall
-import ai.openclaw.android.tools.ToolDisplayRegistry
-import ai.openclaw.android.ui.mobileAccent
-import ai.openclaw.android.ui.mobileAccentSoft
-import ai.openclaw.android.ui.mobileBorder
-import ai.openclaw.android.ui.mobileBorderStrong
-import ai.openclaw.android.ui.mobileCallout
-import ai.openclaw.android.ui.mobileCaption1
-import ai.openclaw.android.ui.mobileCaption2
-import ai.openclaw.android.ui.mobileCodeBg
-import ai.openclaw.android.ui.mobileCodeText
-import ai.openclaw.android.ui.mobileHeadline
-import ai.openclaw.android.ui.mobileText
-import ai.openclaw.android.ui.mobileTextSecondary
-import ai.openclaw.android.ui.mobileWarning
-import ai.openclaw.android.ui.mobileWarningSoft
+import ai.openhand.android.chat.ChatMessage
+import ai.openhand.android.chat.ChatMessageContent
+import ai.openhand.android.chat.ChatPendingToolCall
+import ai.openhand.android.tools.ToolDisplayRegistry
+import ai.openhand.android.ui.mobileAccent
+import ai.openhand.android.ui.mobileAccentSoft
+import ai.openhand.android.ui.mobileBorder
+import ai.openhand.android.ui.mobileBorderStrong
+import ai.openhand.android.ui.mobileCallout
+import ai.openhand.android.ui.mobileCaption1
+import ai.openhand.android.ui.mobileCaption2
+import ai.openhand.android.ui.mobileCodeBg
+import ai.openhand.android.ui.mobileCodeText
+import ai.openhand.android.ui.mobileHeadline
+import ai.openhand.android.ui.mobileText
+import ai.openhand.android.ui.mobileTextSecondary
+import ai.openhand.android.ui.mobileWarning
+import ai.openhand.android.ui.mobileWarningSoft
 import java.util.Locale
 
 private data class ChatBubbleStyle(

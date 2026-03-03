@@ -1,5 +1,5 @@
 import Foundation
-import OpenClawIPC
+import OpenHandIPC
 import Testing
 
 @Suite struct CanvasIPCTests {

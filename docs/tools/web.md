@@ -10,7 +10,7 @@ title: "Web Tools"
 
 # Web tools
 
-OpenClaw ships two lightweight web tools:
+OpenHand ships two lightweight web tools:
 
 - `web_search` — Search the web via Brave Search API (default), Perplexity Sonar, Gemini with Google Search grounding, Grok, or Kimi.
 - `web_fetch` — HTTP fetch + readable extraction (HTML → markdown/text).
@@ -43,7 +43,7 @@ See [Brave Search setup](/brave-search) and [Perplexity Sonar](/perplexity) for 
 
 ### Auto-detection
 
-If no `provider` is explicitly set, OpenClaw auto-detects which provider to use based on available API keys, checking in this order:
+If no `provider` is explicitly set, OpenHand auto-detects which provider to use based on available API keys, checking in this order:
 
 1. **Brave** — `BRAVE_API_KEY` env var or `tools.web.search.apiKey` config
 2. **Gemini** — `GEMINI_API_KEY` env var or `tools.web.search.gemini.apiKey` config
@@ -92,19 +92,19 @@ Example: switch to Perplexity Sonar (direct API):
 
 1. Create a Brave Search API account at [https://brave.com/search/api/](https://brave.com/search/api/)
 2. In the dashboard, choose the **Data for Search** plan (not “Data for AI”) and generate an API key.
-3. Run `openclaw configure --section web` to store the key in config (recommended), or set `BRAVE_API_KEY` in your environment.
+3. Run `openhand configure --section web` to store the key in config (recommended), or set `BRAVE_API_KEY` in your environment.
 
 Brave provides a free tier plus paid plans; check the Brave API portal for the
 current limits and pricing.
 
 ### Where to set the key (recommended)
 
-**Recommended:** run `openclaw configure --section web`. It stores the key in
-`~/.openclaw/openclaw.json` under `tools.web.search.apiKey`.
+**Recommended:** run `openhand configure --section web`. It stores the key in
+`~/.openhand/openhand.json` under `tools.web.search.apiKey`.
 
 **Environment alternative:** set `BRAVE_API_KEY` in the Gateway process
-environment. For a gateway install, put it in `~/.openclaw/.env` (or your
-service environment). See [Env vars](/help/faq#how-does-openclaw-load-environment-variables).
+environment. For a gateway install, put it in `~/.openhand/.env` (or your
+service environment). See [Env vars](/help/faq#how-does-openhand-load-environment-variables).
 
 ## Using Perplexity (direct or via OpenRouter)
 
@@ -142,9 +142,9 @@ crypto/prepaid).
 ```
 
 **Environment alternative:** set `OPENROUTER_API_KEY` or `PERPLEXITY_API_KEY` in the Gateway
-environment. For a gateway install, put it in `~/.openclaw/.env`.
+environment. For a gateway install, put it in `~/.openhand/.env`.
 
-If no base URL is set, OpenClaw chooses a default based on the API key source:
+If no base URL is set, OpenHand chooses a default based on the API key source:
 
 - `PERPLEXITY_API_KEY` or `pplx-...` → `https://api.perplexity.ai`
 - `OPENROUTER_API_KEY` or `sk-or-...` → `https://openrouter.ai/api/v1`
@@ -190,7 +190,7 @@ which returns AI-synthesized answers backed by live Google Search results with c
 ```
 
 **Environment alternative:** set `GEMINI_API_KEY` in the Gateway environment.
-For a gateway install, put it in `~/.openclaw/.env`.
+For a gateway install, put it in `~/.openhand/.env`.
 
 ### Notes
 

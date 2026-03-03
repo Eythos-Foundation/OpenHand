@@ -1,4 +1,4 @@
-import type { OpenClawConfig } from "../../config/config.js";
+import type { OpenHandConfig } from "../../config/config.js";
 import {
   findNormalizedProviderValue,
   normalizeProviderId,
@@ -13,7 +13,7 @@ import {
 } from "./usage.js";
 
 export function resolveAuthProfileOrder(params: {
-  cfg?: OpenClawConfig;
+  cfg?: OpenHandConfig;
   store: AuthProfileStore;
   provider: string;
   preferredProfile?: string;

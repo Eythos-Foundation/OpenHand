@@ -2,7 +2,7 @@ import crypto from "node:crypto";
 import type {
   GatewayAuthConfig,
   GatewayTailscaleConfig,
-  OpenClawConfig,
+  OpenHandConfig,
 } from "../config/config.js";
 import { writeConfigFile } from "../config/config.js";
 import { resolveSecretInputRef } from "../config/types.secrets.js";
@@ -57,7 +57,7 @@ export function mergeGatewayTailscaleConfig(
 }
 
 function resolveGatewayAuthFromConfig(params: {
-  cfg: OpenClawConfig;
+  cfg: OpenHandConfig;
   env: NodeJS.ProcessEnv;
   authOverride?: GatewayAuthConfig;
   tailscaleOverride?: GatewayTailscaleConfig;
@@ -92,12 +92,12 @@ function shouldPersistGeneratedToken(params: {
 }
 
 function hasGatewayTokenCandidate(params: {
-  cfg: OpenClawConfig;
+  cfg: OpenHandConfig;
   env: NodeJS.ProcessEnv;
   authOverride?: GatewayAuthConfig;
 }): boolean {
   const envToken =
-    params.env.OPENCLAW_GATEWAY_TOKEN?.trim() || params.env.CLAWDBOT_GATEWAY_TOKEN?.trim();
+    params.env.OPENHAND_GATEWAY_TOKEN?.trim() || params.env.CLAWDBOT_GATEWAY_TOKEN?.trim();
   if (envToken) {
     return true;
   }
@@ -114,7 +114,7 @@ function hasGatewayTokenCandidate(params: {
 }
 
 function hasGatewayPasswordEnvCandidate(env: NodeJS.ProcessEnv): boolean {
-  return Boolean(env.OPENCLAW_GATEWAY_PASSWORD?.trim() || env.CLAWDBOT_GATEWAY_PASSWORD?.trim());
+  return Boolean(env.OPENHAND_GATEWAY_PASSWORD?.trim() || env.CLAWDBOT_GATEWAY_PASSWORD?.trim());
 }
 
 function hasGatewayPasswordOverrideCandidate(params: {
@@ -131,7 +131,7 @@ function hasGatewayPasswordOverrideCandidate(params: {
 }
 
 function shouldResolveGatewayPasswordSecretRef(params: {
-  cfg: OpenClawConfig;
+  cfg: OpenHandConfig;
   env: NodeJS.ProcessEnv;
   authOverride?: GatewayAuthConfig;
 }): boolean {
@@ -153,10 +153,10 @@ function shouldResolveGatewayPasswordSecretRef(params: {
 }
 
 async function resolveGatewayPasswordSecretRef(
-  cfg: OpenClawConfig,
+  cfg: OpenHandConfig,
   env: NodeJS.ProcessEnv,
   authOverride?: GatewayAuthConfig,
-): Promise<OpenClawConfig> {
+): Promise<OpenHandConfig> {
   const authPassword = cfg.gateway?.auth?.password;
   const { ref } = resolveSecretInputRef({
     value: authPassword,
@@ -189,13 +189,13 @@ async function resolveGatewayPasswordSecretRef(
 }
 
 export async function ensureGatewayStartupAuth(params: {
-  cfg: OpenClawConfig;
+  cfg: OpenHandConfig;
   env?: NodeJS.ProcessEnv;
   authOverride?: GatewayAuthConfig;
   tailscaleOverride?: GatewayTailscaleConfig;
   persist?: boolean;
 }): Promise<{
-  cfg: OpenClawConfig;
+  cfg: OpenHandConfig;
   auth: ReturnType<typeof resolveGatewayAuth>;
   generatedToken?: string;
   persistedGeneratedToken: boolean;
@@ -215,7 +215,7 @@ export async function ensureGatewayStartupAuth(params: {
   }
 
   const generatedToken = crypto.randomBytes(24).toString("hex");
-  const nextCfg: OpenClawConfig = {
+  const nextCfg: OpenHandConfig = {
     ...cfgForAuth,
     gateway: {
       ...cfgForAuth.gateway,
@@ -250,7 +250,7 @@ export async function ensureGatewayStartupAuth(params: {
 }
 
 export function assertHooksTokenSeparateFromGatewayAuth(params: {
-  cfg: OpenClawConfig;
+  cfg: OpenHandConfig;
   auth: ResolvedGatewayAuth;
 }): void {
   if (params.cfg.hooks?.enabled !== true) {
