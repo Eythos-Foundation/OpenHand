@@ -479,19 +479,21 @@ OpenHand is maintained by the **Eythos Foundation**, a Tennessee-based 501(c)(3)
 - **Email:** eythosfoundation@gmail.com
 - **EIN:** 33-1423078
 
-## Community
+## Contributing
 
-OpenHand is a rebrand and continuation of the OpenClaw project, now maintained by the Eythos Foundation.
+OpenHand welcomes contributions from developers, accessibility advocates, and community members who share our mission of making technology more accessible.
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines, maintainers, and how to submit PRs.
-AI/vibe-coded PRs welcome! 🤖
+**How to contribute:**
+- Read our [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines and submission process
+- Report issues or suggest features via [GitHub Issues](https://github.com/Eythos-Foundation/OpenHand/issues)
+- Join discussions on [Discord](https://discord.gg/clawd)
 
-**Original OpenClaw Credits:**
-- Special thanks to Peter Steinberger and the OpenClaw community
-- Special thanks to [Mario Zechner](https://mariozechner.at/) for his support and [pi-mono](https://github.com/badlogic/pi-mono)
-- Special thanks to Adam Doppelt for the original concept
+**About this project:**
+OpenHand is a continuation of the OpenClaw project, now maintained by the Eythos Foundation as part of our commitment to adaptive technology. We honor the original vision while expanding accessibility features and community-driven development.
 
-Thanks to all contributors:
+## Acknowledgments
+
+We're grateful to everyone who has contributed to making OpenHand possible:
 
 <p align="left">
   <a href="https://github.com/steipete"><img src="https://avatars.githubusercontent.com/u/58493?v=4&s=48" width="48" height="48" alt="steipete" title="steipete"/></a> <a href="https://github.com/vincentkoc"><img src="https://avatars.githubusercontent.com/u/25068?v=4&s=48" width="48" height="48" alt="vincentkoc" title="vincentkoc"/></a> <a href="https://github.com/vignesh07"><img src="https://avatars.githubusercontent.com/u/1436853?v=4&s=48" width="48" height="48" alt="vignesh07" title="vignesh07"/></a> <a href="https://github.com/obviyus"><img src="https://avatars.githubusercontent.com/u/22031114?v=4&s=48" width="48" height="48" alt="obviyus" title="obviyus"/></a> <a href="https://github.com/mbelinky"><img src="https://avatars.githubusercontent.com/u/132747814?v=4&s=48" width="48" height="48" alt="Mariano Belinky" title="Mariano Belinky"/></a> <a href="https://github.com/sebslight"><img src="https://avatars.githubusercontent.com/u/19554889?v=4&s=48" width="48" height="48" alt="sebslight" title="sebslight"/></a> <a href="https://github.com/gumadeiras"><img src="https://avatars.githubusercontent.com/u/5599352?v=4&s=48" width="48" height="48" alt="gumadeiras" title="gumadeiras"/></a> <a href="https://github.com/Takhoffman"><img src="https://avatars.githubusercontent.com/u/781889?v=4&s=48" width="48" height="48" alt="Takhoffman" title="Takhoffman"/></a> <a href="https://github.com/thewilloftheshadow"><img src="https://avatars.githubusercontent.com/u/35580099?v=4&s=48" width="48" height="48" alt="thewilloftheshadow" title="thewilloftheshadow"/></a> <a href="https://github.com/cpojer"><img src="https://avatars.githubusercontent.com/u/13352?v=4&s=48" width="48" height="48" alt="cpojer" title="cpojer"/></a>
