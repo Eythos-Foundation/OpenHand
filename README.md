@@ -5,13 +5,6 @@
   Adaptive Technology for People with Disabilities and Neurodiversity
 </p>
 
-<p align="center">
-  <a href="https://github.com/Eythos-Foundation/OpenHand/actions/workflows/ci.yml?branch=main"><img src="https://img.shields.io/github/actions/workflow/status/Eythos-Foundation/OpenHand/ci.yml?branch=main&style=for-the-badge" alt="CI status"></a>
-  <a href="https://github.com/Eythos-Foundation/OpenHand/releases"><img src="https://img.shields.io/github/v/release/Eythos-Foundation/OpenHand?include_prereleases&style=for-the-badge" alt="GitHub release"></a>
-  <a href="https://discord.gg/clawd"><img src="https://img.shields.io/discord/1456350064065904867?label=Discord&logo=discord&logoColor=white&color=5865F2&style=for-the-badge" alt="Discord"></a>
-  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge" alt="MIT License"></a>
-</p>
-
 **OpenHand** is a _personal AI assistant_ you run on your own devices.
 It answers you on the channels you already use (WhatsApp, Telegram, Slack, Discord, Google Chat, Signal, iMessage, BlueBubbles, IRC, Microsoft Teams, Matrix, Feishu, LINE, Mattermost, Nextcloud Talk, Nostr, Synology Chat, Tlon, Twitch, Zalo, Zalo Personal, WebChat). It can speak and listen on macOS/iOS/Android, and can render a live Canvas you control. The Gateway is just the control plane — the product is the assistant.
 
@@ -121,10 +114,6 @@ Run `openhand doctor` to surface risky/misconfigured DM policies.
 - **[First-class tools](https://docs.openhand.ai/tools)** — browser, canvas, nodes, cron, sessions, and Discord/Slack actions.
 - **[Companion apps](https://docs.openhand.ai/platforms/macos)** — macOS menu bar app + iOS/Android [nodes](https://docs.openhand.ai/nodes).
 - **[Onboarding](https://docs.openhand.ai/start/wizard) + [skills](https://docs.openhand.ai/tools/skills)** — wizard-driven setup with bundled/managed/workspace skills.
-
-## Star History
-
-[![Star History Chart](https://api.star-history.com/svg?repos=Eythos-Foundation/OpenHand&type=date&legend=top-left)](https://www.star-history.com/#Eythos-Foundation/OpenHand&type=date&legend=top-left)
 
 ## Everything we built so far
 
