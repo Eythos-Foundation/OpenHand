@@ -58,7 +58,7 @@ openhand agents set-identity --workspace ~/.openhand/workspace --from-identity
 显式覆盖字段：
 
 ```bash
-openhand agents set-identity --agent main --name "OpenHand" --emoji "🦞" --avatar avatars/openhand.png
+openhand agents set-identity --agent main --name "OpenHand" --emoji "" --avatar avatars/openhand.png
 ```
 
 配置示例：
@@ -72,7 +72,7 @@ openhand agents set-identity --agent main --name "OpenHand" --emoji "🦞" --ava
         identity: {
           name: "OpenHand",
           theme: "space lobster",
-          emoji: "🦞",
+          emoji: "",
           avatar: "avatars/openhand.png",
         },
       },

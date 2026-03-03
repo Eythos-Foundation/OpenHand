@@ -5,7 +5,7 @@ read_when:
 title: "OpenHand"
 ---
 
-# OpenHand 🦞
+# OpenHand 
 
 <p align="center">
     <img

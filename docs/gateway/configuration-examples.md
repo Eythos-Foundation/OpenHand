@@ -31,7 +31,7 @@ Save to `~/.openhand/openhand.json` and you can DM the bot from that number.
   identity: {
     name: "Clawd",
     theme: "helpful assistant",
-    emoji: "🦞",
+    emoji: "",
   },
   agent: {
     workspace: "~/.openhand/workspace",

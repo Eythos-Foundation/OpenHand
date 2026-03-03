@@ -99,7 +99,7 @@ openhand agents set-identity --workspace ~/.openhand/workspace --from-identity
 Override fields explicitly:
 
 ```bash
-openhand agents set-identity --agent main --name "OpenHand" --emoji "🦞" --avatar avatars/openhand.png
+openhand agents set-identity --agent main --name "OpenHand" --emoji "" --avatar avatars/openhand.png
 ```
 
 Config sample:
@@ -113,7 +113,7 @@ Config sample:
         identity: {
           name: "OpenHand",
           theme: "space lobster",
-          emoji: "🦞",
+          emoji: "",
           avatar: "avatars/openhand.png",
         },
       },

@@ -12,7 +12,7 @@ x-i18n:
   workflow: 15
 ---
 
-# OpenHand 🦞
+# OpenHand 
 
 <p align="center">
     <img

@@ -324,7 +324,7 @@ export async function launchOpenHandChrome(
         name: profile.name,
         color: profile.color,
       });
-      log.info(`🦞 openhand browser profile decorated (${profile.color})`);
+      log.info(` openhand browser profile decorated (${profile.color})`);
     } catch (err) {
       log.warn(`openhand browser profile decoration failed: ${String(err)}`);
     }
@@ -381,7 +381,7 @@ export async function launchOpenHandChrome(
 
   const pid = proc.pid ?? -1;
   log.info(
-    `🦞 openhand browser started (${exe.kind}) profile "${profile.name}" on 127.0.0.1:${profile.cdpPort} (pid ${pid})`,
+    ` openhand browser started (${exe.kind}) profile "${profile.name}" on 127.0.0.1:${profile.cdpPort} (pid ${pid})`,
   );
 
   return {

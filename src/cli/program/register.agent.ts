@@ -219,7 +219,7 @@ ${theme.muted("Docs:")} ${formatDocsLink("/cli/agent", "docs.openhand.ai/cli/age
         `
 ${theme.heading("Examples:")}
 ${formatHelpExamples([
-  ['openhand agents set-identity --agent main --name "OpenHand" --emoji "🦞"', "Set name + emoji."],
+  ['openhand agents set-identity --agent main --name "OpenHand" --emoji ""', "Set name + emoji."],
   ["openhand agents set-identity --agent main --avatar avatars/openhand.png", "Set avatar path."],
   [
     "openhand agents set-identity --workspace ~/.openhand/workspace --from-identity",
