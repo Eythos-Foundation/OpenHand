@@ -1,19 +1,13 @@
 #  OpenHand — Personal AI Assistant
 
 <p align="center">
-    <picture>
-        <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/openhand/openhand/main/docs/assets/openhand-logo-text-dark.png">
-        <img src="https://raw.githubusercontent.com/openhand/openhand/main/docs/assets/openhand-logo-text.png" alt="OpenHand" width="500">
-    </picture>
+  <strong>Eythos Foundation</strong><br/>
+  Adaptive Technology for People with Disabilities and Neurodiversity
 </p>
 
 <p align="center">
-  <strong>EXFOLIATE! EXFOLIATE!</strong>
-</p>
-
-<p align="center">
-  <a href="https://github.com/openhand/openhand/actions/workflows/ci.yml?branch=main"><img src="https://img.shields.io/github/actions/workflow/status/openhand/openhand/ci.yml?branch=main&style=for-the-badge" alt="CI status"></a>
-  <a href="https://github.com/openhand/openhand/releases"><img src="https://img.shields.io/github/v/release/openhand/openhand?include_prereleases&style=for-the-badge" alt="GitHub release"></a>
+  <a href="https://github.com/Eythos-Foundation/OpenHand/actions/workflows/ci.yml?branch=main"><img src="https://img.shields.io/github/actions/workflow/status/Eythos-Foundation/OpenHand/ci.yml?branch=main&style=for-the-badge" alt="CI status"></a>
+  <a href="https://github.com/Eythos-Foundation/OpenHand/releases"><img src="https://img.shields.io/github/v/release/Eythos-Foundation/OpenHand?include_prereleases&style=for-the-badge" alt="GitHub release"></a>
   <a href="https://discord.gg/clawd"><img src="https://img.shields.io/discord/1456350064065904867?label=Discord&logo=discord&logoColor=white&color=5865F2&style=for-the-badge" alt="Discord"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge" alt="MIT License"></a>
 </p>
@@ -23,24 +17,18 @@ It answers you on the channels you already use (WhatsApp, Telegram, Slack, Disco
 
 If you want a personal, single-user assistant that feels local, fast, and always-on, this is it.
 
-[Website](https://openhand.ai) · [Docs](https://docs.openhand.ai) · [Vision](VISION.md) · [DeepWiki](https://deepwiki.com/openhand/openhand) · [Getting Started](https://docs.openhand.ai/start/getting-started) · [Updating](https://docs.openhand.ai/install/updating) · [Showcase](https://docs.openhand.ai/start/showcase) · [FAQ](https://docs.openhand.ai/help/faq) · [Wizard](https://docs.openhand.ai/start/wizard) · [Nix](https://github.com/openhand/nix-openhand) · [Docker](https://docs.openhand.ai/install/docker) · [Discord](https://discord.gg/clawd)
+[Docs](https://docs.eythosfound.org) · [Vision](VISION.md) · [Getting Started](https://docs.eythosfound.org/start/getting-started) · [Updating](https://docs.eythosfound.org/install/updating) · [FAQ](https://docs.eythosfound.org/help/faq) · [Wizard](https://docs.eythosfound.org/start/wizard) · [Docker](https://docs.eythosfound.org/install/docker) · [Discord](https://discord.gg/clawd)
 
 Preferred setup: run the onboarding wizard (`openhand onboard`) in your terminal.
 The wizard guides you step by step through setting up the gateway, workspace, channels, and skills. The CLI wizard is the recommended path and works on **macOS, Linux, and Windows (via WSL2; strongly recommended)**.
 Works with npm, pnpm, or bun.
 New install? Start here: [Getting started](https://docs.openhand.ai/start/getting-started)
 
-## Sponsors
+## About OpenHand
 
-| OpenAI                                                            | Vercel                                                            | Blacksmith                                                                   | Convex                                                                |
-| ----------------------------------------------------------------- | ----------------------------------------------------------------- | ---------------------------------------------------------------------------- | --------------------------------------------------------------------- |
-| [![OpenAI](docs/assets/sponsors/openai.svg)](https://openai.com/) | [![Vercel](docs/assets/sponsors/vercel.svg)](https://vercel.com/) | [![Blacksmith](docs/assets/sponsors/blacksmith.svg)](https://blacksmith.sh/) | [![Convex](docs/assets/sponsors/convex.svg)](https://www.convex.dev/) |
+OpenHand is maintained by the **Eythos Foundation**, a 501(c)(3) nonprofit organization focused on adaptive technology for people with disabilities and neurodiversity.
 
-**Subscriptions (OAuth):**
-
-- **[OpenAI](https://openai.com/)** (ChatGPT/Codex)
-
-Model note: while many providers/models are supported, for the best experience and lower prompt-injection risk use the strongest latest-generation model available to you. See [Onboarding](https://docs.openhand.ai/start/onboarding).
+Model note: while many providers/models are supported, for the best experience and lower prompt-injection risk use the strongest latest-generation model available to you. See [Onboarding](https://docs.eythosfound.org/start/onboarding).
 
 ## Models (selection + auth)
 
@@ -136,7 +124,7 @@ Run `openhand doctor` to surface risky/misconfigured DM policies.
 
 ## Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=openhand/openhand&type=date&legend=top-left)](https://www.star-history.com/#openhand/openhand&type=date&legend=top-left)
+[![Star History Chart](https://api.star-history.com/svg?repos=Eythos-Foundation/OpenHand&type=date&legend=top-left)](https://www.star-history.com/#Eythos-Foundation/OpenHand&type=date&legend=top-left)
 
 ## Everything we built so far
 
@@ -480,26 +468,30 @@ Use these when you’re past the onboarding flow and want the deeper reference.
 
 - [docs.openhand.ai/gmail-pubsub](https://docs.openhand.ai/automation/gmail-pubsub)
 
-## Molty
+## Eythos Foundation
 
-OpenHand was built for **Molty**, a space lobster AI assistant. 
-by Peter Steinberger and the community.
+OpenHand is maintained by the **Eythos Foundation**, a Tennessee-based 501(c)(3) nonprofit organization.
 
-- [openhand.ai](https://openhand.ai)
-- [soul.md](https://soul.md)
-- [steipete.me](https://steipete.me)
-- [@openhand](https://x.com/openhand)
+**Mission:** Adaptive technology for people with disabilities and neurodiversity.
+
+- **GitHub:** [Eythos-Foundation/OpenHand](https://github.com/Eythos-Foundation/OpenHand)
+- **Documentation:** [docs.eythosfound.org](https://docs.eythosfound.org)
+- **Email:** eythosfoundation@gmail.com
+- **EIN:** 33-1423078
 
 ## Community
+
+OpenHand is a rebrand and continuation of the OpenClaw project, now maintained by the Eythos Foundation.
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines, maintainers, and how to submit PRs.
 AI/vibe-coded PRs welcome! 🤖
 
-Special thanks to [Mario Zechner](https://mariozechner.at/) for his support and for
-[pi-mono](https://github.com/badlogic/pi-mono).
-Special thanks to Adam Doppelt for lobster.bot.
+**Original OpenClaw Credits:**
+- Special thanks to Peter Steinberger and the OpenClaw community
+- Special thanks to [Mario Zechner](https://mariozechner.at/) for his support and [pi-mono](https://github.com/badlogic/pi-mono)
+- Special thanks to Adam Doppelt for the original concept
 
-Thanks to all clawtributors:
+Thanks to all contributors:
 
 <p align="left">
   <a href="https://github.com/steipete"><img src="https://avatars.githubusercontent.com/u/58493?v=4&s=48" width="48" height="48" alt="steipete" title="steipete"/></a> <a href="https://github.com/vincentkoc"><img src="https://avatars.githubusercontent.com/u/25068?v=4&s=48" width="48" height="48" alt="vincentkoc" title="vincentkoc"/></a> <a href="https://github.com/vignesh07"><img src="https://avatars.githubusercontent.com/u/1436853?v=4&s=48" width="48" height="48" alt="vignesh07" title="vignesh07"/></a> <a href="https://github.com/obviyus"><img src="https://avatars.githubusercontent.com/u/22031114?v=4&s=48" width="48" height="48" alt="obviyus" title="obviyus"/></a> <a href="https://github.com/mbelinky"><img src="https://avatars.githubusercontent.com/u/132747814?v=4&s=48" width="48" height="48" alt="Mariano Belinky" title="Mariano Belinky"/></a> <a href="https://github.com/sebslight"><img src="https://avatars.githubusercontent.com/u/19554889?v=4&s=48" width="48" height="48" alt="sebslight" title="sebslight"/></a> <a href="https://github.com/gumadeiras"><img src="https://avatars.githubusercontent.com/u/5599352?v=4&s=48" width="48" height="48" alt="gumadeiras" title="gumadeiras"/></a> <a href="https://github.com/Takhoffman"><img src="https://avatars.githubusercontent.com/u/781889?v=4&s=48" width="48" height="48" alt="Takhoffman" title="Takhoffman"/></a> <a href="https://github.com/thewilloftheshadow"><img src="https://avatars.githubusercontent.com/u/35580099?v=4&s=48" width="48" height="48" alt="thewilloftheshadow" title="thewilloftheshadow"/></a> <a href="https://github.com/cpojer"><img src="https://avatars.githubusercontent.com/u/13352?v=4&s=48" width="48" height="48" alt="cpojer" title="cpojer"/></a>
