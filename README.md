@@ -15,7 +15,7 @@ If you want a personal, single-user assistant that feels local, fast, and always
 Preferred setup: run the onboarding wizard (`openhand onboard`) in your terminal.
 The wizard guides you step by step through setting up the gateway, workspace, channels, and skills. The CLI wizard is the recommended path and works on **macOS, Linux, and Windows (via WSL2; strongly recommended)**.
 Works with npm, pnpm, or bun.
-New install? Start here: [Getting started](https://docs.openhand.ai/start/getting-started)
+New install? Start here: [Getting started](https://docs.eythosfound.org/start/getting-started)
 
 ## About OpenHand
 
@@ -25,8 +25,8 @@ Model note: while many providers/models are supported, for the best experience a
 
 ## Models (selection + auth)
 
-- Models config + CLI: [Models](https://docs.openhand.ai/concepts/models)
-- Auth profile rotation (OAuth vs API keys) + fallbacks: [Model failover](https://docs.openhand.ai/concepts/model-failover)
+- Models config + CLI: [Models](https://docs.eythosfound.org/concepts/models)
+- Auth profile rotation (OAuth vs API keys) + fallbacks: [Model failover](https://docs.eythosfound.org/concepts/model-failover)
 
 ## Install (recommended)
 
@@ -45,7 +45,7 @@ The wizard installs the Gateway daemon (launchd/systemd user service) so it stay
 
 Runtime: **Node ≥22**.
 
-Full beginner guide (auth, pairing, channels): [Getting started](https://docs.openhand.ai/start/getting-started)
+Full beginner guide (auth, pairing, channels): [Getting started](https://docs.eythosfound.org/start/getting-started)
 
 ```bash
 openhand onboard --install-daemon
@@ -59,7 +59,7 @@ openhand message send --to +1234567890 --message "Hello from OpenHand"
 openhand agent --message "Ship checklist" --thinking high
 ```
 
-Upgrading? [Updating guide](https://docs.openhand.ai/install/updating) (and run `openhand doctor`).
+Upgrading? [Updating guide](https://docs.eythosfound.org/install/updating) (and run `openhand doctor`).
 
 ## Development channels
 
@@ -68,7 +68,7 @@ Upgrading? [Updating guide](https://docs.openhand.ai/install/updating) (and run 
 - **dev**: moving head of `main`, npm dist-tag `dev` (when published).
 
 Switch channels (git + npm): `openhand update --channel stable|beta|dev`.
-Details: [Development channels](https://docs.openhand.ai/install/development-channels).
+Details: [Development channels](https://docs.eythosfound.org/install/development-channels).
 
 ## From source (development)
 
@@ -94,7 +94,7 @@ Note: `pnpm openhand ...` runs TypeScript directly (via `tsx`). `pnpm build` pro
 
 OpenHand connects to real messaging surfaces. Treat inbound DMs as **untrusted input**.
 
-Full security guide: [Security](https://docs.openhand.ai/gateway/security)
+Full security guide: [Security](https://docs.eythosfound.org/gateway/security)
 
 Default behavior on Telegram/WhatsApp/Signal/iMessage/Microsoft Teams/Discord/Google Chat/Slack:
 
@@ -106,58 +106,58 @@ Run `openhand doctor` to surface risky/misconfigured DM policies.
 
 ## Highlights
 
-- **[Local-first Gateway](https://docs.openhand.ai/gateway)** — single control plane for sessions, channels, tools, and events.
-- **[Multi-channel inbox](https://docs.openhand.ai/channels)** — WhatsApp, Telegram, Slack, Discord, Google Chat, Signal, BlueBubbles (iMessage), iMessage (legacy), IRC, Microsoft Teams, Matrix, Feishu, LINE, Mattermost, Nextcloud Talk, Nostr, Synology Chat, Tlon, Twitch, Zalo, Zalo Personal, WebChat, macOS, iOS/Android.
-- **[Multi-agent routing](https://docs.openhand.ai/gateway/configuration)** — route inbound channels/accounts/peers to isolated agents (workspaces + per-agent sessions).
-- **[Voice Wake](https://docs.openhand.ai/nodes/voicewake) + [Talk Mode](https://docs.openhand.ai/nodes/talk)** — wake words on macOS/iOS and continuous voice on Android (ElevenLabs + system TTS fallback).
-- **[Live Canvas](https://docs.openhand.ai/platforms/mac/canvas)** — agent-driven visual workspace with [A2UI](https://docs.openhand.ai/platforms/mac/canvas#canvas-a2ui).
-- **[First-class tools](https://docs.openhand.ai/tools)** — browser, canvas, nodes, cron, sessions, and Discord/Slack actions.
-- **[Companion apps](https://docs.openhand.ai/platforms/macos)** — macOS menu bar app + iOS/Android [nodes](https://docs.openhand.ai/nodes).
-- **[Onboarding](https://docs.openhand.ai/start/wizard) + [skills](https://docs.openhand.ai/tools/skills)** — wizard-driven setup with bundled/managed/workspace skills.
+- **[Local-first Gateway](https://docs.eythosfound.org/gateway)** — single control plane for sessions, channels, tools, and events.
+- **[Multi-channel inbox](https://docs.eythosfound.org/channels)** — WhatsApp, Telegram, Slack, Discord, Google Chat, Signal, BlueBubbles (iMessage), iMessage (legacy), IRC, Microsoft Teams, Matrix, Feishu, LINE, Mattermost, Nextcloud Talk, Nostr, Synology Chat, Tlon, Twitch, Zalo, Zalo Personal, WebChat, macOS, iOS/Android.
+- **[Multi-agent routing](https://docs.eythosfound.org/gateway/configuration)** — route inbound channels/accounts/peers to isolated agents (workspaces + per-agent sessions).
+- **[Voice Wake](https://docs.eythosfound.org/nodes/voicewake) + [Talk Mode](https://docs.eythosfound.org/nodes/talk)** — wake words on macOS/iOS and continuous voice on Android (ElevenLabs + system TTS fallback).
+- **[Live Canvas](https://docs.eythosfound.org/platforms/mac/canvas)** — agent-driven visual workspace with [A2UI](https://docs.eythosfound.org/platforms/mac/canvas#canvas-a2ui).
+- **[First-class tools](https://docs.eythosfound.org/tools)** — browser, canvas, nodes, cron, sessions, and Discord/Slack actions.
+- **[Companion apps](https://docs.eythosfound.org/platforms/macos)** — macOS menu bar app + iOS/Android [nodes](https://docs.eythosfound.org/nodes).
+- **[Onboarding](https://docs.eythosfound.org/start/wizard) + [skills](https://docs.eythosfound.org/tools/skills)** — wizard-driven setup with bundled/managed/workspace skills.
 
 ## Everything we built so far
 
 ### Core platform
 
-- [Gateway WS control plane](https://docs.openhand.ai/gateway) with sessions, presence, config, cron, webhooks, [Control UI](https://docs.openhand.ai/web), and [Canvas host](https://docs.openhand.ai/platforms/mac/canvas#canvas-a2ui).
-- [CLI surface](https://docs.openhand.ai/tools/agent-send): gateway, agent, send, [wizard](https://docs.openhand.ai/start/wizard), and [doctor](https://docs.openhand.ai/gateway/doctor).
-- [Pi agent runtime](https://docs.openhand.ai/concepts/agent) in RPC mode with tool streaming and block streaming.
-- [Session model](https://docs.openhand.ai/concepts/session): `main` for direct chats, group isolation, activation modes, queue modes, reply-back. Group rules: [Groups](https://docs.openhand.ai/channels/groups).
-- [Media pipeline](https://docs.openhand.ai/nodes/images): images/audio/video, transcription hooks, size caps, temp file lifecycle. Audio details: [Audio](https://docs.openhand.ai/nodes/audio).
+- [Gateway WS control plane](https://docs.eythosfound.org/gateway) with sessions, presence, config, cron, webhooks, [Control UI](https://docs.eythosfound.org/web), and [Canvas host](https://docs.eythosfound.org/platforms/mac/canvas#canvas-a2ui).
+- [CLI surface](https://docs.eythosfound.org/tools/agent-send): gateway, agent, send, [wizard](https://docs.eythosfound.org/start/wizard), and [doctor](https://docs.eythosfound.org/gateway/doctor).
+- [Pi agent runtime](https://docs.eythosfound.org/concepts/agent) in RPC mode with tool streaming and block streaming.
+- [Session model](https://docs.eythosfound.org/concepts/session): `main` for direct chats, group isolation, activation modes, queue modes, reply-back. Group rules: [Groups](https://docs.eythosfound.org/channels/groups).
+- [Media pipeline](https://docs.eythosfound.org/nodes/images): images/audio/video, transcription hooks, size caps, temp file lifecycle. Audio details: [Audio](https://docs.eythosfound.org/nodes/audio).
 
 ### Channels
 
-- [Channels](https://docs.openhand.ai/channels): [WhatsApp](https://docs.openhand.ai/channels/whatsapp) (Baileys), [Telegram](https://docs.openhand.ai/channels/telegram) (grammY), [Slack](https://docs.openhand.ai/channels/slack) (Bolt), [Discord](https://docs.openhand.ai/channels/discord) (discord.js), [Google Chat](https://docs.openhand.ai/channels/googlechat) (Chat API), [Signal](https://docs.openhand.ai/channels/signal) (signal-cli), [BlueBubbles](https://docs.openhand.ai/channels/bluebubbles) (iMessage, recommended), [iMessage](https://docs.openhand.ai/channels/imessage) (legacy imsg), [IRC](https://docs.openhand.ai/channels/irc), [Microsoft Teams](https://docs.openhand.ai/channels/msteams), [Matrix](https://docs.openhand.ai/channels/matrix), [Feishu](https://docs.openhand.ai/channels/feishu), [LINE](https://docs.openhand.ai/channels/line), [Mattermost](https://docs.openhand.ai/channels/mattermost), [Nextcloud Talk](https://docs.openhand.ai/channels/nextcloud-talk), [Nostr](https://docs.openhand.ai/channels/nostr), [Synology Chat](https://docs.openhand.ai/channels/synology-chat), [Tlon](https://docs.openhand.ai/channels/tlon), [Twitch](https://docs.openhand.ai/channels/twitch), [Zalo](https://docs.openhand.ai/channels/zalo), [Zalo Personal](https://docs.openhand.ai/channels/zalouser), [WebChat](https://docs.openhand.ai/web/webchat).
-- [Group routing](https://docs.openhand.ai/channels/group-messages): mention gating, reply tags, per-channel chunking and routing. Channel rules: [Channels](https://docs.openhand.ai/channels).
+- [Channels](https://docs.eythosfound.org/channels): [WhatsApp](https://docs.eythosfound.org/channels/whatsapp) (Baileys), [Telegram](https://docs.eythosfound.org/channels/telegram) (grammY), [Slack](https://docs.eythosfound.org/channels/slack) (Bolt), [Discord](https://docs.eythosfound.org/channels/discord) (discord.js), [Google Chat](https://docs.eythosfound.org/channels/googlechat) (Chat API), [Signal](https://docs.eythosfound.org/channels/signal) (signal-cli), [BlueBubbles](https://docs.eythosfound.org/channels/bluebubbles) (iMessage, recommended), [iMessage](https://docs.eythosfound.org/channels/imessage) (legacy imsg), [IRC](https://docs.eythosfound.org/channels/irc), [Microsoft Teams](https://docs.eythosfound.org/channels/msteams), [Matrix](https://docs.eythosfound.org/channels/matrix), [Feishu](https://docs.eythosfound.org/channels/feishu), [LINE](https://docs.eythosfound.org/channels/line), [Mattermost](https://docs.eythosfound.org/channels/mattermost), [Nextcloud Talk](https://docs.eythosfound.org/channels/nextcloud-talk), [Nostr](https://docs.eythosfound.org/channels/nostr), [Synology Chat](https://docs.eythosfound.org/channels/synology-chat), [Tlon](https://docs.eythosfound.org/channels/tlon), [Twitch](https://docs.eythosfound.org/channels/twitch), [Zalo](https://docs.eythosfound.org/channels/zalo), [Zalo Personal](https://docs.eythosfound.org/channels/zalouser), [WebChat](https://docs.eythosfound.org/web/webchat).
+- [Group routing](https://docs.eythosfound.org/channels/group-messages): mention gating, reply tags, per-channel chunking and routing. Channel rules: [Channels](https://docs.eythosfound.org/channels).
 
 ### Apps + nodes
 
-- [macOS app](https://docs.openhand.ai/platforms/macos): menu bar control plane, [Voice Wake](https://docs.openhand.ai/nodes/voicewake)/PTT, [Talk Mode](https://docs.openhand.ai/nodes/talk) overlay, [WebChat](https://docs.openhand.ai/web/webchat), debug tools, [remote gateway](https://docs.openhand.ai/gateway/remote) control.
-- [iOS node](https://docs.openhand.ai/platforms/ios): [Canvas](https://docs.openhand.ai/platforms/mac/canvas), [Voice Wake](https://docs.openhand.ai/nodes/voicewake), [Talk Mode](https://docs.openhand.ai/nodes/talk), camera, screen recording, Bonjour + device pairing.
-- [Android node](https://docs.openhand.ai/platforms/android): Connect tab (setup code/manual), chat sessions, voice tab, [Canvas](https://docs.openhand.ai/platforms/mac/canvas), camera/screen recording, and Android device commands (notifications/location/SMS/photos/contacts/calendar/motion/app update).
-- [macOS node mode](https://docs.openhand.ai/nodes): system.run/notify + canvas/camera exposure.
+- [macOS app](https://docs.eythosfound.org/platforms/macos): menu bar control plane, [Voice Wake](https://docs.eythosfound.org/nodes/voicewake)/PTT, [Talk Mode](https://docs.eythosfound.org/nodes/talk) overlay, [WebChat](https://docs.eythosfound.org/web/webchat), debug tools, [remote gateway](https://docs.eythosfound.org/gateway/remote) control.
+- [iOS node](https://docs.eythosfound.org/platforms/ios): [Canvas](https://docs.eythosfound.org/platforms/mac/canvas), [Voice Wake](https://docs.eythosfound.org/nodes/voicewake), [Talk Mode](https://docs.eythosfound.org/nodes/talk), camera, screen recording, Bonjour + device pairing.
+- [Android node](https://docs.eythosfound.org/platforms/android): Connect tab (setup code/manual), chat sessions, voice tab, [Canvas](https://docs.eythosfound.org/platforms/mac/canvas), camera/screen recording, and Android device commands (notifications/location/SMS/photos/contacts/calendar/motion/app update).
+- [macOS node mode](https://docs.eythosfound.org/nodes): system.run/notify + canvas/camera exposure.
 
 ### Tools + automation
 
-- [Browser control](https://docs.openhand.ai/tools/browser): dedicated openhand Chrome/Chromium, snapshots, actions, uploads, profiles.
-- [Canvas](https://docs.openhand.ai/platforms/mac/canvas): [A2UI](https://docs.openhand.ai/platforms/mac/canvas#canvas-a2ui) push/reset, eval, snapshot.
-- [Nodes](https://docs.openhand.ai/nodes): camera snap/clip, screen record, [location.get](https://docs.openhand.ai/nodes/location-command), notifications.
-- [Cron + wakeups](https://docs.openhand.ai/automation/cron-jobs); [webhooks](https://docs.openhand.ai/automation/webhook); [Gmail Pub/Sub](https://docs.openhand.ai/automation/gmail-pubsub).
-- [Skills platform](https://docs.openhand.ai/tools/skills): bundled, managed, and workspace skills with install gating + UI.
+- [Browser control](https://docs.eythosfound.org/tools/browser): dedicated openhand Chrome/Chromium, snapshots, actions, uploads, profiles.
+- [Canvas](https://docs.eythosfound.org/platforms/mac/canvas): [A2UI](https://docs.eythosfound.org/platforms/mac/canvas#canvas-a2ui) push/reset, eval, snapshot.
+- [Nodes](https://docs.eythosfound.org/nodes): camera snap/clip, screen record, [location.get](https://docs.eythosfound.org/nodes/location-command), notifications.
+- [Cron + wakeups](https://docs.eythosfound.org/automation/cron-jobs); [webhooks](https://docs.eythosfound.org/automation/webhook); [Gmail Pub/Sub](https://docs.eythosfound.org/automation/gmail-pubsub).
+- [Skills platform](https://docs.eythosfound.org/tools/skills): bundled, managed, and workspace skills with install gating + UI.
 
 ### Runtime + safety
 
-- [Channel routing](https://docs.openhand.ai/channels/channel-routing), [retry policy](https://docs.openhand.ai/concepts/retry), and [streaming/chunking](https://docs.openhand.ai/concepts/streaming).
-- [Presence](https://docs.openhand.ai/concepts/presence), [typing indicators](https://docs.openhand.ai/concepts/typing-indicators), and [usage tracking](https://docs.openhand.ai/concepts/usage-tracking).
-- [Models](https://docs.openhand.ai/concepts/models), [model failover](https://docs.openhand.ai/concepts/model-failover), and [session pruning](https://docs.openhand.ai/concepts/session-pruning).
-- [Security](https://docs.openhand.ai/gateway/security) and [troubleshooting](https://docs.openhand.ai/channels/troubleshooting).
+- [Channel routing](https://docs.eythosfound.org/channels/channel-routing), [retry policy](https://docs.eythosfound.org/concepts/retry), and [streaming/chunking](https://docs.eythosfound.org/concepts/streaming).
+- [Presence](https://docs.eythosfound.org/concepts/presence), [typing indicators](https://docs.eythosfound.org/concepts/typing-indicators), and [usage tracking](https://docs.eythosfound.org/concepts/usage-tracking).
+- [Models](https://docs.eythosfound.org/concepts/models), [model failover](https://docs.eythosfound.org/concepts/model-failover), and [session pruning](https://docs.eythosfound.org/concepts/session-pruning).
+- [Security](https://docs.eythosfound.org/gateway/security) and [troubleshooting](https://docs.eythosfound.org/channels/troubleshooting).
 
 ### Ops + packaging
 
-- [Control UI](https://docs.openhand.ai/web) + [WebChat](https://docs.openhand.ai/web/webchat) served directly from the Gateway.
-- [Tailscale Serve/Funnel](https://docs.openhand.ai/gateway/tailscale) or [SSH tunnels](https://docs.openhand.ai/gateway/remote) with token/password auth.
-- [Nix mode](https://docs.openhand.ai/install/nix) for declarative config; [Docker](https://docs.openhand.ai/install/docker)-based installs.
-- [Doctor](https://docs.openhand.ai/gateway/doctor) migrations, [logging](https://docs.openhand.ai/logging).
+- [Control UI](https://docs.eythosfound.org/web) + [WebChat](https://docs.eythosfound.org/web/webchat) served directly from the Gateway.
+- [Tailscale Serve/Funnel](https://docs.eythosfound.org/gateway/tailscale) or [SSH tunnels](https://docs.eythosfound.org/gateway/remote) with token/password auth.
+- [Nix mode](https://docs.eythosfound.org/install/nix) for declarative config; [Docker](https://docs.eythosfound.org/install/docker)-based installs.
+- [Doctor](https://docs.eythosfound.org/gateway/doctor) migrations, [logging](https://docs.eythosfound.org/logging).
 
 ## How it works (short)
 
@@ -180,12 +180,12 @@ WhatsApp / Telegram / Slack / Discord / Google Chat / Signal / iMessage / BlueBu
 
 ## Key subsystems
 
-- **[Gateway WebSocket network](https://docs.openhand.ai/concepts/architecture)** — single WS control plane for clients, tools, and events (plus ops: [Gateway runbook](https://docs.openhand.ai/gateway)).
-- **[Tailscale exposure](https://docs.openhand.ai/gateway/tailscale)** — Serve/Funnel for the Gateway dashboard + WS (remote access: [Remote](https://docs.openhand.ai/gateway/remote)).
-- **[Browser control](https://docs.openhand.ai/tools/browser)** — openhand‑managed Chrome/Chromium with CDP control.
-- **[Canvas + A2UI](https://docs.openhand.ai/platforms/mac/canvas)** — agent‑driven visual workspace (A2UI host: [Canvas/A2UI](https://docs.openhand.ai/platforms/mac/canvas#canvas-a2ui)).
-- **[Voice Wake](https://docs.openhand.ai/nodes/voicewake) + [Talk Mode](https://docs.openhand.ai/nodes/talk)** — wake words on macOS/iOS plus continuous voice on Android.
-- **[Nodes](https://docs.openhand.ai/nodes)** — Canvas, camera snap/clip, screen record, `location.get`, notifications, plus macOS‑only `system.run`/`system.notify`.
+- **[Gateway WebSocket network](https://docs.eythosfound.org/concepts/architecture)** — single WS control plane for clients, tools, and events (plus ops: [Gateway runbook](https://docs.eythosfound.org/gateway)).
+- **[Tailscale exposure](https://docs.eythosfound.org/gateway/tailscale)** — Serve/Funnel for the Gateway dashboard + WS (remote access: [Remote](https://docs.eythosfound.org/gateway/remote)).
+- **[Browser control](https://docs.eythosfound.org/tools/browser)** — openhand‑managed Chrome/Chromium with CDP control.
+- **[Canvas + A2UI](https://docs.eythosfound.org/platforms/mac/canvas)** — agent‑driven visual workspace (A2UI host: [Canvas/A2UI](https://docs.eythosfound.org/platforms/mac/canvas#canvas-a2ui)).
+- **[Voice Wake](https://docs.eythosfound.org/nodes/voicewake) + [Talk Mode](https://docs.eythosfound.org/nodes/talk)** — wake words on macOS/iOS plus continuous voice on Android.
+- **[Nodes](https://docs.eythosfound.org/nodes)** — Canvas, camera snap/clip, screen record, `location.get`, notifications, plus macOS‑only `system.run`/`system.notify`.
 
 ## Tailscale access (Gateway dashboard)
 
@@ -202,7 +202,7 @@ Notes:
 - Funnel refuses to start unless `gateway.auth.mode: "password"` is set.
 - Optional: `gateway.tailscale.resetOnExit` to undo Serve/Funnel on shutdown.
 
-Details: [Tailscale guide](https://docs.openhand.ai/gateway/tailscale) · [Web surfaces](https://docs.openhand.ai/web)
+Details: [Tailscale guide](https://docs.eythosfound.org/gateway/tailscale) · [Web surfaces](https://docs.eythosfound.org/web)
 
 ## Remote Gateway (Linux is great)
 
@@ -212,7 +212,7 @@ It’s perfectly fine to run the Gateway on a small Linux instance. Clients (mac
 - **Device nodes** run device‑local actions (`system.run`, camera, screen recording, notifications) via `node.invoke`.
   In short: exec runs where the Gateway lives; device actions run where the device lives.
 
-Details: [Remote access](https://docs.openhand.ai/gateway/remote) · [Nodes](https://docs.openhand.ai/nodes) · [Security](https://docs.openhand.ai/gateway/security)
+Details: [Remote access](https://docs.eythosfound.org/gateway/remote) · [Nodes](https://docs.eythosfound.org/nodes) · [Security](https://docs.eythosfound.org/gateway/security)
 
 ## macOS permissions via the Gateway protocol
 
@@ -227,7 +227,7 @@ Elevated bash (host permissions) is separate from macOS TCC:
 - Use `/elevated on|off` to toggle per‑session elevated access when enabled + allowlisted.
 - Gateway persists the per‑session toggle via `sessions.patch` (WS method) alongside `thinkingLevel`, `verboseLevel`, `model`, `sendPolicy`, and `groupActivation`.
 
-Details: [Nodes](https://docs.openhand.ai/nodes) · [macOS app](https://docs.openhand.ai/platforms/macos) · [Gateway protocol](https://docs.openhand.ai/concepts/architecture)
+Details: [Nodes](https://docs.eythosfound.org/nodes) · [macOS app](https://docs.eythosfound.org/platforms/macos) · [Gateway protocol](https://docs.eythosfound.org/concepts/architecture)
 
 ## Agent to Agent (sessions\_\* tools)
 
@@ -236,7 +236,7 @@ Details: [Nodes](https://docs.openhand.ai/nodes) · [macOS app](https://docs.ope
 - `sessions_history` — fetch transcript logs for a session.
 - `sessions_send` — message another session; optional reply‑back ping‑pong + announce step (`REPLY_SKIP`, `ANNOUNCE_SKIP`).
 
-Details: [Session tools](https://docs.openhand.ai/concepts/session-tool)
+Details: [Session tools](https://docs.eythosfound.org/concepts/session-tool)
 
 ## Skills registry (ClawHub)
 
@@ -278,13 +278,13 @@ Note: signed builds required for macOS permissions to stick across rebuilds (see
 - Voice trigger forwarding + Canvas surface.
 - Controlled via `openhand nodes …`.
 
-Runbook: [iOS connect](https://docs.openhand.ai/platforms/ios).
+Runbook: [iOS connect](https://docs.eythosfound.org/platforms/ios).
 
 ### Android node (optional)
 
 - Pairs as a WS node via device pairing (`openhand devices ...`).
 - Exposes Connect/Chat/Voice tabs plus Canvas, Camera, Screen capture, and Android device command families.
-- Runbook: [Android connect](https://docs.openhand.ai/platforms/android).
+- Runbook: [Android connect](https://docs.eythosfound.org/platforms/android).
 
 ## Agent workspace + skills
 
@@ -304,7 +304,7 @@ Minimal `~/.openhand/openhand.json` (model + defaults):
 }
 ```
 
-[Full configuration reference (all keys + examples).](https://docs.openhand.ai/gateway/configuration)
+[Full configuration reference (all keys + examples).](https://docs.eythosfound.org/gateway/configuration)
 
 ## Security model (important)
 
@@ -312,15 +312,15 @@ Minimal `~/.openhand/openhand.json` (model + defaults):
 - **Group/channel safety:** set `agents.defaults.sandbox.mode: "non-main"` to run **non‑main sessions** (groups/channels) inside per‑session Docker sandboxes; bash then runs in Docker for those sessions.
 - **Sandbox defaults:** allowlist `bash`, `process`, `read`, `write`, `edit`, `sessions_list`, `sessions_history`, `sessions_send`, `sessions_spawn`; denylist `browser`, `canvas`, `nodes`, `cron`, `discord`, `gateway`.
 
-Details: [Security guide](https://docs.openhand.ai/gateway/security) · [Docker + sandboxing](https://docs.openhand.ai/install/docker) · [Sandbox config](https://docs.openhand.ai/gateway/configuration)
+Details: [Security guide](https://docs.eythosfound.org/gateway/security) · [Docker + sandboxing](https://docs.eythosfound.org/install/docker) · [Sandbox config](https://docs.eythosfound.org/gateway/configuration)
 
-### [WhatsApp](https://docs.openhand.ai/channels/whatsapp)
+### [WhatsApp](https://docs.eythosfound.org/channels/whatsapp)
 
 - Link the device: `pnpm openhand channels login` (stores creds in `~/.openhand/credentials`).
 - Allowlist who can talk to the assistant via `channels.whatsapp.allowFrom`.
 - If `channels.whatsapp.groups` is set, it becomes a group allowlist; include `"*"` to allow all.
 
-### [Telegram](https://docs.openhand.ai/channels/telegram)
+### [Telegram](https://docs.eythosfound.org/channels/telegram)
 
 - Set `TELEGRAM_BOT_TOKEN` or `channels.telegram.botToken` (env wins).
 - Optional: set `channels.telegram.groups` (with `channels.telegram.groups."*".requireMention`); when set, it is a group allowlist (include `"*"` to allow all). Also `channels.telegram.allowFrom` or `channels.telegram.webhookUrl` + `channels.telegram.webhookSecret` as needed.
@@ -335,11 +335,11 @@ Details: [Security guide](https://docs.openhand.ai/gateway/security) · [Docker 
 }
 ```
 
-### [Slack](https://docs.openhand.ai/channels/slack)
+### [Slack](https://docs.eythosfound.org/channels/slack)
 
 - Set `SLACK_BOT_TOKEN` + `SLACK_APP_TOKEN` (or `channels.slack.botToken` + `channels.slack.appToken`).
 
-### [Discord](https://docs.openhand.ai/channels/discord)
+### [Discord](https://docs.eythosfound.org/channels/discord)
 
 - Set `DISCORD_BOT_TOKEN` or `channels.discord.token` (env wins).
 - Optional: set `commands.native`, `commands.text`, or `commands.useAccessGroups`, plus `channels.discord.allowFrom`, `channels.discord.guilds`, or `channels.discord.mediaMaxMb` as needed.
@@ -354,27 +354,27 @@ Details: [Security guide](https://docs.openhand.ai/gateway/security) · [Docker 
 }
 ```
 
-### [Signal](https://docs.openhand.ai/channels/signal)
+### [Signal](https://docs.eythosfound.org/channels/signal)
 
 - Requires `signal-cli` and a `channels.signal` config section.
 
-### [BlueBubbles (iMessage)](https://docs.openhand.ai/channels/bluebubbles)
+### [BlueBubbles (iMessage)](https://docs.eythosfound.org/channels/bluebubbles)
 
 - **Recommended** iMessage integration.
 - Configure `channels.bluebubbles.serverUrl` + `channels.bluebubbles.password` and a webhook (`channels.bluebubbles.webhookPath`).
 - The BlueBubbles server runs on macOS; the Gateway can run on macOS or elsewhere.
 
-### [iMessage (legacy)](https://docs.openhand.ai/channels/imessage)
+### [iMessage (legacy)](https://docs.eythosfound.org/channels/imessage)
 
 - Legacy macOS-only integration via `imsg` (Messages must be signed in).
 - If `channels.imessage.groups` is set, it becomes a group allowlist; include `"*"` to allow all.
 
-### [Microsoft Teams](https://docs.openhand.ai/channels/msteams)
+### [Microsoft Teams](https://docs.eythosfound.org/channels/msteams)
 
 - Configure a Teams app + Bot Framework, then add a `msteams` config section.
 - Allowlist who can talk via `msteams.allowFrom`; group access via `msteams.groupAllowFrom` or `msteams.groupPolicy: "open"`.
 
-### [WebChat](https://docs.openhand.ai/web/webchat)
+### [WebChat](https://docs.eythosfound.org/web/webchat)
 
 - Uses the Gateway WebSocket; no separate WebChat port/config.
 
@@ -393,69 +393,69 @@ Browser control (optional):
 
 Use these when you’re past the onboarding flow and want the deeper reference.
 
-- [Start with the docs index for navigation and “what’s where.”](https://docs.openhand.ai)
-- [Read the architecture overview for the gateway + protocol model.](https://docs.openhand.ai/concepts/architecture)
-- [Use the full configuration reference when you need every key and example.](https://docs.openhand.ai/gateway/configuration)
-- [Run the Gateway by the book with the operational runbook.](https://docs.openhand.ai/gateway)
-- [Learn how the Control UI/Web surfaces work and how to expose them safely.](https://docs.openhand.ai/web)
-- [Understand remote access over SSH tunnels or tailnets.](https://docs.openhand.ai/gateway/remote)
-- [Follow the onboarding wizard flow for a guided setup.](https://docs.openhand.ai/start/wizard)
-- [Wire external triggers via the webhook surface.](https://docs.openhand.ai/automation/webhook)
-- [Set up Gmail Pub/Sub triggers.](https://docs.openhand.ai/automation/gmail-pubsub)
-- [Learn the macOS menu bar companion details.](https://docs.openhand.ai/platforms/mac/menu-bar)
-- [Platform guides: Windows (WSL2)](https://docs.openhand.ai/platforms/windows), [Linux](https://docs.openhand.ai/platforms/linux), [macOS](https://docs.openhand.ai/platforms/macos), [iOS](https://docs.openhand.ai/platforms/ios), [Android](https://docs.openhand.ai/platforms/android)
-- [Debug common failures with the troubleshooting guide.](https://docs.openhand.ai/channels/troubleshooting)
-- [Review security guidance before exposing anything.](https://docs.openhand.ai/gateway/security)
+- [Start with the docs index for navigation and “what’s where.”](https://docs.eythosfound.org)
+- [Read the architecture overview for the gateway + protocol model.](https://docs.eythosfound.org/concepts/architecture)
+- [Use the full configuration reference when you need every key and example.](https://docs.eythosfound.org/gateway/configuration)
+- [Run the Gateway by the book with the operational runbook.](https://docs.eythosfound.org/gateway)
+- [Learn how the Control UI/Web surfaces work and how to expose them safely.](https://docs.eythosfound.org/web)
+- [Understand remote access over SSH tunnels or tailnets.](https://docs.eythosfound.org/gateway/remote)
+- [Follow the onboarding wizard flow for a guided setup.](https://docs.eythosfound.org/start/wizard)
+- [Wire external triggers via the webhook surface.](https://docs.eythosfound.org/automation/webhook)
+- [Set up Gmail Pub/Sub triggers.](https://docs.eythosfound.org/automation/gmail-pubsub)
+- [Learn the macOS menu bar companion details.](https://docs.eythosfound.org/platforms/mac/menu-bar)
+- [Platform guides: Windows (WSL2)](https://docs.eythosfound.org/platforms/windows), [Linux](https://docs.eythosfound.org/platforms/linux), [macOS](https://docs.eythosfound.org/platforms/macos), [iOS](https://docs.eythosfound.org/platforms/ios), [Android](https://docs.eythosfound.org/platforms/android)
+- [Debug common failures with the troubleshooting guide.](https://docs.eythosfound.org/channels/troubleshooting)
+- [Review security guidance before exposing anything.](https://docs.eythosfound.org/gateway/security)
 
 ## Advanced docs (discovery + control)
 
-- [Discovery + transports](https://docs.openhand.ai/gateway/discovery)
-- [Bonjour/mDNS](https://docs.openhand.ai/gateway/bonjour)
-- [Gateway pairing](https://docs.openhand.ai/gateway/pairing)
-- [Remote gateway README](https://docs.openhand.ai/gateway/remote-gateway-readme)
-- [Control UI](https://docs.openhand.ai/web/control-ui)
-- [Dashboard](https://docs.openhand.ai/web/dashboard)
+- [Discovery + transports](https://docs.eythosfound.org/gateway/discovery)
+- [Bonjour/mDNS](https://docs.eythosfound.org/gateway/bonjour)
+- [Gateway pairing](https://docs.eythosfound.org/gateway/pairing)
+- [Remote gateway README](https://docs.eythosfound.org/gateway/remote-gateway-readme)
+- [Control UI](https://docs.eythosfound.org/web/control-ui)
+- [Dashboard](https://docs.eythosfound.org/web/dashboard)
 
 ## Operations & troubleshooting
 
-- [Health checks](https://docs.openhand.ai/gateway/health)
-- [Gateway lock](https://docs.openhand.ai/gateway/gateway-lock)
-- [Background process](https://docs.openhand.ai/gateway/background-process)
-- [Browser troubleshooting (Linux)](https://docs.openhand.ai/tools/browser-linux-troubleshooting)
-- [Logging](https://docs.openhand.ai/logging)
+- [Health checks](https://docs.eythosfound.org/gateway/health)
+- [Gateway lock](https://docs.eythosfound.org/gateway/gateway-lock)
+- [Background process](https://docs.eythosfound.org/gateway/background-process)
+- [Browser troubleshooting (Linux)](https://docs.eythosfound.org/tools/browser-linux-troubleshooting)
+- [Logging](https://docs.eythosfound.org/logging)
 
 ## Deep dives
 
-- [Agent loop](https://docs.openhand.ai/concepts/agent-loop)
-- [Presence](https://docs.openhand.ai/concepts/presence)
-- [TypeBox schemas](https://docs.openhand.ai/concepts/typebox)
-- [RPC adapters](https://docs.openhand.ai/reference/rpc)
-- [Queue](https://docs.openhand.ai/concepts/queue)
+- [Agent loop](https://docs.eythosfound.org/concepts/agent-loop)
+- [Presence](https://docs.eythosfound.org/concepts/presence)
+- [TypeBox schemas](https://docs.eythosfound.org/concepts/typebox)
+- [RPC adapters](https://docs.eythosfound.org/reference/rpc)
+- [Queue](https://docs.eythosfound.org/concepts/queue)
 
 ## Workspace & skills
 
-- [Skills config](https://docs.openhand.ai/tools/skills-config)
-- [Default AGENTS](https://docs.openhand.ai/reference/AGENTS.default)
-- [Templates: AGENTS](https://docs.openhand.ai/reference/templates/AGENTS)
-- [Templates: BOOTSTRAP](https://docs.openhand.ai/reference/templates/BOOTSTRAP)
-- [Templates: IDENTITY](https://docs.openhand.ai/reference/templates/IDENTITY)
-- [Templates: SOUL](https://docs.openhand.ai/reference/templates/SOUL)
-- [Templates: TOOLS](https://docs.openhand.ai/reference/templates/TOOLS)
-- [Templates: USER](https://docs.openhand.ai/reference/templates/USER)
+- [Skills config](https://docs.eythosfound.org/tools/skills-config)
+- [Default AGENTS](https://docs.eythosfound.org/reference/AGENTS.default)
+- [Templates: AGENTS](https://docs.eythosfound.org/reference/templates/AGENTS)
+- [Templates: BOOTSTRAP](https://docs.eythosfound.org/reference/templates/BOOTSTRAP)
+- [Templates: IDENTITY](https://docs.eythosfound.org/reference/templates/IDENTITY)
+- [Templates: SOUL](https://docs.eythosfound.org/reference/templates/SOUL)
+- [Templates: TOOLS](https://docs.eythosfound.org/reference/templates/TOOLS)
+- [Templates: USER](https://docs.eythosfound.org/reference/templates/USER)
 
 ## Platform internals
 
-- [macOS dev setup](https://docs.openhand.ai/platforms/mac/dev-setup)
-- [macOS menu bar](https://docs.openhand.ai/platforms/mac/menu-bar)
-- [macOS voice wake](https://docs.openhand.ai/platforms/mac/voicewake)
-- [iOS node](https://docs.openhand.ai/platforms/ios)
-- [Android node](https://docs.openhand.ai/platforms/android)
-- [Windows (WSL2)](https://docs.openhand.ai/platforms/windows)
-- [Linux app](https://docs.openhand.ai/platforms/linux)
+- [macOS dev setup](https://docs.eythosfound.org/platforms/mac/dev-setup)
+- [macOS menu bar](https://docs.eythosfound.org/platforms/mac/menu-bar)
+- [macOS voice wake](https://docs.eythosfound.org/platforms/mac/voicewake)
+- [iOS node](https://docs.eythosfound.org/platforms/ios)
+- [Android node](https://docs.eythosfound.org/platforms/android)
+- [Windows (WSL2)](https://docs.eythosfound.org/platforms/windows)
+- [Linux app](https://docs.eythosfound.org/platforms/linux)
 
 ## Email hooks (Gmail)
 
-- [docs.openhand.ai/gmail-pubsub](https://docs.openhand.ai/automation/gmail-pubsub)
+- [docs.openhand.ai/gmail-pubsub](https://docs.eythosfound.org/automation/gmail-pubsub)
 
 ## Eythos Foundation
 

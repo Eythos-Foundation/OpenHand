@@ -3,15 +3,15 @@
   "version": "2026.3.2",
   "description": "Multi-channel AI gateway with extensible messaging integrations",
   "keywords": [],
-  "homepage": "https://github.com/openhand/openhand#readme",
+  "homepage": "https://github.com/Eythos-Foundation/OpenHand#readme",
   "bugs": {
-    "url": "https://github.com/openhand/openhand/issues"
+    "url": "https://github.com/Eythos-Foundation/OpenHand/issues"
   },
   "license": "MIT",
-  "author": "",
+  "author": "Eythos Foundation",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/openhand/openhand.git"
+    "url": "git+https://github.com/Eythos-Foundation/OpenHand.git"
   },
   "bin": {
     "openhand": "openhand.mjs"
