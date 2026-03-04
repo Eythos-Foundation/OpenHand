@@ -478,5 +478,5 @@ OpenHand welcomes contributions from developers, accessibility advocates, and co
 - Join discussions on [Discord](https://discord.gg/clawd)
 
 **About this project:**
-OpenHand is a continuation of the OpenClaw project, now maintained by the Eythos Foundation as part of our commitment to adaptive technology. We honor the original vision while expanding accessibility features and community-driven development.
+OpenHand is a continuation of the OpenHand project, now maintained by the Eythos Foundation as part of our commitment to adaptive technology. We honor the original vision while expanding accessibility features and community-driven development.
 
