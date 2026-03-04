@@ -1,4 +1,4 @@
-#  OpenHand — Personal AI Assistant
+# 🖐 OpenHand — Personal AI Assistant
 
 <p align="center">
   <strong>Eythos Foundation</strong><br/>

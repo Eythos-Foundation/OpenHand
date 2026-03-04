@@ -2,7 +2,7 @@
 summary: "OpenHand is a multi-channel gateway for AI agents that runs on any OS."
 read_when:
   - Introducing OpenHand to newcomers
-title: "OpenHand"
+title: "🖐 OpenHand"
 ---
 
 # OpenHand 
