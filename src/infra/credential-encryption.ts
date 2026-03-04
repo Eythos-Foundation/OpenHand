@@ -3,7 +3,7 @@
  * Provides at-rest encryption for sensitive data using AES-256-GCM
  */
 
-import crypto from "node:crypto";
+import * as crypto from "node:crypto";
 
 const ALGORITHM = "aes-256-gcm";
 const IV_LENGTH = 16;

@@ -123,7 +123,7 @@ export function generatePasswordSuggestion(): string {
     password += getRandom(all);
   }
 
-  // Shuffle the password
+  // Shuffle the password (using sort instead of toSorted for compatibility)
   return password
     .split("")
     .toSorted(() => Math.random() - 0.5)
